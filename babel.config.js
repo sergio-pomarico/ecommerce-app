@@ -7,7 +7,10 @@ module.exports = {
         root: ['./src'],
         extensions: ['.ts', '.tsx', 'js', 'jsx', '.json'],
         alias: {
+          '@routes': './src/routes',
           '@config': './src/config',
+          '@core': './src/core',
+          '@screens': './src/screens',
           '@components': './src/components',
         },
       },
