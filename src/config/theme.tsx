@@ -19,10 +19,27 @@ type NamedStyles<T> = {
 const {width} = Dimensions.get('screen');
 export const aspectRatio = width / 375;
 
-//const palette = {};
+const palette = {
+  black: '#000000',
+  blue: '#7DCCEC',
+  lightBlue: '#D3F2FF',
+  grey: '#9A9A9D',
+  darkGrey: '#868686',
+  lightGrey: '#F5F5F8',
+  mediumGrey: '#C4C4C4',
+  indigo: '#5956E9',
+  ligthIndigo: '#F4F6FA',
+  red: '#FA4A0C',
+  white: '#FFFFFF',
+};
 
 const theme = createTheme({
-  colors: {},
+  colors: {
+    background: palette.lightGrey,
+    primary: palette.indigo,
+    text: palette.black,
+    white: palette.white,
+  },
   spacing: {
     xs: 8,
     s: 16,
@@ -37,7 +54,14 @@ const theme = createTheme({
     xl: 64,
   },
   breakpoints: {},
-  textVariants: {},
+  textVariants: {
+    hero: {
+      color: 'white',
+      fontSize: 80,
+      fontFamily: 'Raleway-ExtraBold',
+      lineHeight: 80,
+    },
+  },
 });
 
 export const ThemeProvider = ({children}: {children: ReactNode}) => (
