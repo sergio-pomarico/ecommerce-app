@@ -39,6 +39,7 @@ const theme = createTheme({
     primary: palette.indigo,
     text: palette.black,
     white: palette.white,
+    blue: palette.blue,
   },
   spacing: {
     xs: 8,
@@ -60,6 +61,12 @@ const theme = createTheme({
       fontSize: 80,
       fontFamily: 'Raleway-ExtraBold',
       lineHeight: 80,
+    },
+    button: {
+      fontFamily: 'Raleway-Bold',
+      fontSize: 20,
+      lineHeight: 24,
+      textAlign: 'center',
     },
   },
 });
