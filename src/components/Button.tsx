@@ -22,7 +22,7 @@ const Button: FC<ButtonProps> = ({variant, label, onPress, style}) => {
     variant === 'primary' || variant === 'blue'
       ? theme.colors.white
       : theme.colors.primary;
-  console.log(color);
+
   return (
     <TouchableOpacity
       style={[styles.container, style, {backgroundColor}]}

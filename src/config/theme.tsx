@@ -58,9 +58,10 @@ const theme = createTheme({
   textVariants: {
     hero: {
       color: 'white',
-      fontSize: 80,
+      fontSize: 50,
       fontFamily: 'Raleway-ExtraBold',
-      lineHeight: 80,
+      lineHeight: 50,
+      textAlign: 'center',
     },
     button: {
       fontFamily: 'Raleway-Bold',
