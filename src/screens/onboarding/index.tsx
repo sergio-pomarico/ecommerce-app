@@ -19,16 +19,15 @@ import {AuthRoutes, StackNavigationProps} from '@core/types/navigation';
 import {Box, Button} from '@components';
 import {useTheme} from '@config/theme';
 
-import Slide from './slide';
 import {slides} from './constanst';
+import Slide from './slide';
 import Dot from './dot';
 
 const {width} = Dimensions.get('window');
 
-const OnboardingScreen = ({}: StackNavigationProps<
-  AuthRoutes,
-  'Onboarding'
->) => {
+const OnboardingScreen = ({
+  navigation,
+}: StackNavigationProps<AuthRoutes, 'Onboarding'>) => {
   const translateX = useSharedValue(0);
   const insets = useSafeAreaInsets();
   const theme = useTheme();
@@ -46,6 +45,7 @@ const OnboardingScreen = ({}: StackNavigationProps<
 
   const onPressNext = useCallback(() => {
     if (currentIndex.value === slides.length - 1) {
+      navigation.replace('SignUp');
       return;
     }
     scrollRef.current?.scrollTo({
