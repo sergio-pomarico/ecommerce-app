@@ -23,6 +23,7 @@ const palette = {
   black: '#000000',
   blue: '#7DCCEC',
   lightBlue: '#D3F2FF',
+  danger: '#E16C71',
   grey: '#9A9A9D',
   darkGrey: '#868686',
   lightGrey: '#F5F5F8',
@@ -40,6 +41,9 @@ const theme = createTheme({
     text: palette.black,
     white: palette.white,
     blue: palette.blue,
+    grey: palette.grey,
+    darkGrey: palette.darkGrey,
+    error: palette.danger,
   },
   spacing: {
     xs: 8,
@@ -68,6 +72,12 @@ const theme = createTheme({
       fontSize: 20,
       lineHeight: 24,
       textAlign: 'center',
+    },
+    label: {
+      fontFamily: 'Raleway-SemiBold',
+      fontSize: 15,
+      lineHeight: 18,
+      textTransform: 'capitalize',
     },
   },
 });
