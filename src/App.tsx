@@ -5,7 +5,7 @@ import {Provider} from 'react-redux';
 import Navigation from '@routes/main';
 import {ThemeProvider} from '@config/theme';
 
-import store from './store';
+import store from '@store/reducers';
 
 const App = () => {
   return (

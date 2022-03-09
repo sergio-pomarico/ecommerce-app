@@ -1,4 +1,4 @@
-import {Action} from '@core/types/action';
+import {Action} from '@core/types/redux';
 import {UIActionsType} from './actions.types';
 
 const initialState = {
@@ -11,7 +11,6 @@ export default function UIReducer(
 ) {
   switch (action.type) {
     case UIActionsType.SHOW_LOADING: {
-      console.log('dispatch');
       const {loading} = action.payload;
       return {...state, loading};
     }
