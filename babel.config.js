@@ -14,6 +14,7 @@ module.exports = {
           '@forms': './src/shared/forms',
           '@routes': './src/routes',
           '@screens': './src/screens',
+          '@store': './src/store',
         },
       },
     ],
