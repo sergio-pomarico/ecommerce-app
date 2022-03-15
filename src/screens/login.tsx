@@ -6,15 +6,15 @@ import {useDispatch} from 'react-redux';
 import {AuthRoutes, StackNavigationProps} from '@core/types/navigation';
 import {Box, Container, Loading, Text} from '@components';
 import {useTheme} from '@config/theme';
-import SignUpForm from '@forms/signup';
+import LoginForm from '@forms/login';
 import {showLoading} from '@store/ui/actions';
 
-const SignUpScreen = ({
+const LoginScreen = ({
   navigation,
-}: StackNavigationProps<AuthRoutes, 'SignUp'>) => {
-  const {navigate} = navigation;
+}: StackNavigationProps<AuthRoutes, 'Login'>) => {
   const theme = useTheme();
   const dispatch = useDispatch();
+  const {navigate} = navigation;
   return (
     <Container background={theme.colors.primary}>
       <Box
@@ -23,15 +23,16 @@ const SignUpScreen = ({
       />
       <Box paddingHorizontal="l" paddingVertical="xl">
         <Text variant="hero" textAlign="left">
-          Create Account
+          Welcome Back
         </Text>
       </Box>
-      <SignUpForm
+      <LoginForm
         onSubmit={() => dispatch(showLoading(true))}
-        onPressLogin={() => navigate('Login')}
+        onPressForgot={() => {}}
+        onPressCreate={() => navigate('SignUp')}
       />
     </Container>
   );
 };
 
-export default compose(Loading)(SignUpScreen);
+export default compose(Loading)(LoginScreen);
