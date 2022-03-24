@@ -3,6 +3,7 @@ import {UIActionsType} from './actions.types';
 
 const initialState = {
   loading: false,
+  modal: true,
 };
 
 export default function UIReducer(
@@ -11,8 +12,12 @@ export default function UIReducer(
 ) {
   switch (action.type) {
     case UIActionsType.SHOW_LOADING: {
-      const {loading} = action.payload;
-      return {...state, loading};
+      const {show} = action.payload;
+      return {...state, show};
+    }
+    case UIActionsType.SHOW_MODAl: {
+      const {show} = action.payload;
+      return {...state, show};
     }
     default:
       return state;
