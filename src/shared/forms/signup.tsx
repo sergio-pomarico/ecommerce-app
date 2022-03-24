@@ -42,7 +42,7 @@ const SignUpForm: FC<SignUpFormProps> = ({onSubmit, onPressLogin}) => {
       flex={1}
       borderTopRightRadius="l"
       borderTopLeftRadius="l"
-      paddingTop="xl">
+      paddingVertical="xl">
       <Input
         label="Email"
         icon="message"
