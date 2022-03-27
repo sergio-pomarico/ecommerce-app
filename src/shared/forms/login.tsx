@@ -5,36 +5,32 @@ import * as Yup from 'yup';
 
 import {Box, Button, Input, Link} from '@components';
 
-interface SignUpFormProps {
+interface LoginFormProps {
   onSubmit: (form: object) => void;
-  onPressLogin: () => void;
+  onPressForgot: () => void;
+  onPressCreate: () => void;
 }
 
-const SignUpSchema = Yup.object().shape({
+const LoginSchema = Yup.object().shape({
   email: Yup.string().email().required(),
   password: Yup.string().min(6).max(16).required(),
-  passwordConfirmation: Yup.string()
-    .required()
-    .min(6)
-    .max(16)
-    .test('passwords-match', function (value) {
-      return this.parent.password === value;
-    }),
 });
 
-const SignUpForm: FC<SignUpFormProps> = ({onSubmit, onPressLogin}) => {
+const LoginForm: FC<LoginFormProps> = ({
+  onSubmit,
+  onPressForgot,
+  onPressCreate,
+}) => {
   const {values, handleChange, handleBlur, touched, errors, handleSubmit} =
     useFormik({
       initialValues: {
         email: '',
         password: '',
-        passwordConfirmation: '',
       },
-      validationSchema: SignUpSchema,
+      validationSchema: LoginSchema,
       onSubmit: inputs => onSubmit(inputs),
     });
   const password = useRef<TextInput>(null);
-  const passwordConfirmation = useRef<TextInput>(null);
   return (
     <Box
       backgroundColor="white"
@@ -42,7 +38,7 @@ const SignUpForm: FC<SignUpFormProps> = ({onSubmit, onPressLogin}) => {
       flex={1}
       borderTopRightRadius="l"
       borderTopLeftRadius="l"
-      paddingVertical="xl">
+      paddingTop="xl">
       <Input
         label="Email"
         icon="message"
@@ -68,32 +64,18 @@ const SignUpForm: FC<SignUpFormProps> = ({onSubmit, onPressLogin}) => {
         returnKeyType="next"
         returnKeyLabel="Next"
         secureTextEntry
-        onSubmitEditing={() => passwordConfirmation.current?.focus()}
-      />
-      <Input
-        label="Repeat your password"
-        icon="lock"
-        placeholder="Confirm your password"
-        value={values.passwordConfirmation}
-        onChanceText={handleChange('passwordConfirmation')}
-        touched={touched.passwordConfirmation}
-        error={errors.passwordConfirmation}
-        onBlur={handleBlur('passwordConfirmation')}
-        secureTextEntry
-        returnKeyType="send"
         onSubmitEditing={handleSubmit}
       />
       <Box paddingVertical="s">
-        <Button
-          label="Create your account"
-          onPress={handleSubmit}
-          variant="primary"
-        />
+        <Link onPress={onPressForgot} label="Forgot password ?" />
+      </Box>
+      <Box paddingVertical="s">
+        <Button label="Login" onPress={handleSubmit} variant="primary" />
       </Box>
       <Box paddingVertical="s">
         <Link
-          onPress={onPressLogin}
-          label="Have an account ?, Login"
+          onPress={onPressCreate}
+          label="Don’t have an account? Sign Up"
           alignment="center"
         />
       </Box>
@@ -101,4 +83,4 @@ const SignUpForm: FC<SignUpFormProps> = ({onSubmit, onPressLogin}) => {
   );
 };
 
-export default SignUpForm;
+export default LoginForm;

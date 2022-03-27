@@ -12,4 +12,5 @@ export interface StackNavigationProps<
 export type AuthRoutes = {
   Onboarding: undefined;
   SignUp: undefined;
+  Login: undefined;
 };

@@ -67,10 +67,34 @@ const theme = createTheme({
       lineHeight: 50,
       textAlign: 'center',
     },
-    button: {
+    h1: {
+      fontFamily: 'Raleway-SemiBold',
+      fontSize: 32,
+      lineHeight: 36,
+      textAlign: 'center',
+    },
+    h2: {
+      fontFamily: 'Raleway-Bold',
+      fontSize: 28,
+      lineHeight: 32,
+      textAlign: 'center',
+    },
+    h3: {
+      fontFamily: 'Raleway-SemiBold',
+      fontSize: 24,
+      lineHeight: 24,
+      textAlign: 'center',
+    },
+    button_large: {
       fontFamily: 'Raleway-Bold',
       fontSize: 20,
       lineHeight: 24,
+      textAlign: 'center',
+    },
+    button_medium: {
+      fontFamily: 'Raleway-Bold',
+      fontSize: 16,
+      lineHeight: 18,
       textAlign: 'center',
     },
     label: {
