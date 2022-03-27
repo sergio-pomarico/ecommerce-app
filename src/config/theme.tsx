@@ -67,10 +67,16 @@ const theme = createTheme({
       lineHeight: 50,
       textAlign: 'center',
     },
-    button: {
+    button_large: {
       fontFamily: 'Raleway-Bold',
       fontSize: 20,
       lineHeight: 24,
+      textAlign: 'center',
+    },
+    button_medium: {
+      fontFamily: 'Raleway-Bold',
+      fontSize: 16,
+      lineHeight: 18,
       textAlign: 'center',
     },
     label: {

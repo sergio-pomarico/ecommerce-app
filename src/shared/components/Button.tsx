@@ -8,9 +8,16 @@ interface ButtonProps {
   variant: 'primary' | 'secondary' | 'blue';
   onPress: () => void;
   style?: ViewStyle;
+  size?: 'large' | 'medium';
 }
 
-const Button: FC<ButtonProps> = ({variant, label, onPress, style}) => {
+const Button: FC<ButtonProps> = ({
+  variant,
+  size = 'large',
+  label,
+  onPress,
+  style,
+}) => {
   const theme = useTheme();
   const backgroundColor =
     variant === 'primary'
@@ -22,12 +29,16 @@ const Button: FC<ButtonProps> = ({variant, label, onPress, style}) => {
     variant === 'primary' || variant === 'blue'
       ? theme.colors.white
       : theme.colors.primary;
+  const width = size === 'medium' ? 225 : '100%';
+  const height = size === 'medium' ? 50 : 70;
 
   return (
     <TouchableOpacity
-      style={[styles.container, style, {backgroundColor}]}
+      style={[styles.container, style, {backgroundColor, height, width}]}
       onPress={onPress}>
-      <Text style={{color}} variant="button">
+      <Text
+        style={{color}}
+        variant={size === 'medium' ? 'button_medium' : 'button_large'}>
         {label}
       </Text>
     </TouchableOpacity>
@@ -45,7 +56,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     height: 70,
     justifyContent: 'center',
-    width: '100%',
   },
 });
 
