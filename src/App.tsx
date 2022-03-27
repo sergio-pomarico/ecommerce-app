@@ -4,6 +4,7 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {Provider} from 'react-redux';
 import Navigation from '@routes/main';
 import {ThemeProvider} from '@config/theme';
+import ModalWrapper from 'shared/components/ModalWrapper';
 
 import store from '@store/reducers';
 
@@ -14,6 +15,7 @@ const App = () => {
         <StatusBar barStyle="light-content" />
         <SafeAreaProvider>
           <Navigation />
+          <ModalWrapper />
         </SafeAreaProvider>
       </ThemeProvider>
     </Provider>

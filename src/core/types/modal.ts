@@ -3,6 +3,7 @@ export interface ModalProps {
   title: string;
   description?: string;
   type: ModalTypes;
+  action?: () => void;
 }
 export enum ModalTypes {
   INFO = 'INFO',
