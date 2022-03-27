@@ -7,7 +7,7 @@ export interface Action<T, P> {
 
 export function createAction<T extends string, P>(
   type: T,
-  payload: P,
+  payload?: P,
 ): Action<T, P> {
   return {type, payload};
 }
