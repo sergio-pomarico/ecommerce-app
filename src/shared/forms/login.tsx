@@ -6,7 +6,7 @@ import * as Yup from 'yup';
 import {Box, Button, Input, Link} from '@components';
 
 interface LoginFormProps {
-  onSubmit: (form: object) => void;
+  onSubmit: (form: {email: string; password: string}) => void;
   onPressForgot: () => void;
   onPressCreate: () => void;
 }

@@ -7,7 +7,7 @@ import {AuthRoutes, StackNavigationProps} from '@core/types/navigation';
 import {Box, Container, Loading, Text} from '@components';
 import {useTheme} from '@config/theme';
 import LoginForm from '@forms/login';
-import {showLoading} from '@store/ui/actions';
+import {loginAttempt} from '@store/auth/actions';
 
 const LoginScreen = ({
   navigation,
@@ -27,7 +27,7 @@ const LoginScreen = ({
         </Text>
       </Box>
       <LoginForm
-        onSubmit={() => dispatch(showLoading(true))}
+        onSubmit={form => dispatch(loginAttempt(form))}
         onPressForgot={() => {}}
         onPressCreate={() => navigate('SignUp')}
       />
