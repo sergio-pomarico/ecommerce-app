@@ -1,5 +1,6 @@
 import React, {FC, useRef} from 'react';
 import {TextInput} from 'react-native';
+import {useTranslation} from 'react-i18next';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
 
@@ -35,6 +36,7 @@ const SignUpForm: FC<SignUpFormProps> = ({onSubmit, onPressLogin}) => {
     });
   const password = useRef<TextInput>(null);
   const passwordConfirmation = useRef<TextInput>(null);
+  const {t} = useTranslation();
   return (
     <Box
       backgroundColor="white"
@@ -44,36 +46,36 @@ const SignUpForm: FC<SignUpFormProps> = ({onSubmit, onPressLogin}) => {
       borderTopLeftRadius="l"
       paddingVertical="xl">
       <Input
-        label="Email"
+        label={t('common.email')}
         icon="message"
-        placeholder="Add your email"
+        placeholder={t('auth.addEmail')}
         value={values.email}
         onChanceText={handleChange('email')}
         touched={touched.email}
         error={errors.email}
         onBlur={handleBlur('email')}
         returnKeyType="next"
-        returnKeyLabel="Next"
+        returnKeyLabel={t('auth.next')}
         onSubmitEditing={() => password.current?.focus()}
       />
       <Input
-        label="Password"
+        label={t('common.password')}
         icon="lock"
-        placeholder="Enter your password"
+        placeholder={t('auth.addPassword')}
         value={values.password}
         onChanceText={handleChange('password')}
         touched={touched.password}
         error={errors.password}
         onBlur={handleBlur('password')}
         returnKeyType="next"
-        returnKeyLabel="Next"
+        returnKeyLabel={t('common.next')}
         secureTextEntry
         onSubmitEditing={() => passwordConfirmation.current?.focus()}
       />
       <Input
-        label="Repeat your password"
+        label={t('auth.repeatPassword')}
         icon="lock"
-        placeholder="Confirm your password"
+        placeholder={t('auth.confirmPassword')}
         value={values.passwordConfirmation}
         onChanceText={handleChange('passwordConfirmation')}
         touched={touched.passwordConfirmation}
@@ -85,7 +87,7 @@ const SignUpForm: FC<SignUpFormProps> = ({onSubmit, onPressLogin}) => {
       />
       <Box paddingVertical="s">
         <Button
-          label="Create your account"
+          label={t('auth.signUp')}
           onPress={handleSubmit}
           variant="primary"
         />
@@ -93,7 +95,7 @@ const SignUpForm: FC<SignUpFormProps> = ({onSubmit, onPressLogin}) => {
       <Box paddingVertical="s">
         <Link
           onPress={onPressLogin}
-          label="Have an account ?, Login"
+          label={t('auth.haveAccount')}
           alignment="center"
         />
       </Box>

@@ -8,6 +8,7 @@ import {Box, Container, Loading, Text} from '@components';
 import {useTheme} from '@config/theme';
 import SignUpForm from '@forms/signup';
 import {showLoading} from '@store/ui/actions';
+import {useTranslation} from 'react-i18next';
 
 const SignUpScreen = ({
   navigation,
@@ -15,6 +16,8 @@ const SignUpScreen = ({
   const {navigate} = navigation;
   const theme = useTheme();
   const dispatch = useDispatch();
+  const {t} = useTranslation();
+
   return (
     <Container background={theme.colors.primary}>
       <Box
@@ -23,7 +26,7 @@ const SignUpScreen = ({
       />
       <Box paddingHorizontal="l" paddingVertical="xl">
         <Text variant="hero" textAlign="left">
-          Create Account
+          {t('auth.createAccount')}
         </Text>
       </Box>
       <SignUpForm

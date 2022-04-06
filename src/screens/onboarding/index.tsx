@@ -5,6 +5,7 @@ import {
   ScrollView,
   StyleSheet,
 } from 'react-native';
+import {useTranslation} from 'react-i18next';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import Animated, {
   interpolateColor,
@@ -31,6 +32,7 @@ const OnboardingScreen = ({
   const translateX = useSharedValue(0);
   const insets = useSafeAreaInsets();
   const theme = useTheme();
+  const {t} = useTranslation();
   const scrollRef = useAnimatedRef<ScrollView>();
 
   const scrollHandler = useAnimatedScrollHandler({
@@ -102,7 +104,11 @@ const OnboardingScreen = ({
             />
           ))}
         </Box>
-        <Button label="Next" variant="secondary" onPress={onPressNext} />
+        <Button
+          label={t('common.next')}
+          variant="secondary"
+          onPress={onPressNext}
+        />
       </Box>
     </Animated.View>
   );

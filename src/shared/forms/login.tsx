@@ -1,5 +1,6 @@
 import React, {FC, useRef} from 'react';
 import {TextInput} from 'react-native';
+import {useTranslation} from 'react-i18next';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
 
@@ -31,6 +32,7 @@ const LoginForm: FC<LoginFormProps> = ({
       onSubmit: inputs => onSubmit(inputs),
     });
   const password = useRef<TextInput>(null);
+  const {t} = useTranslation();
   return (
     <Box
       backgroundColor="white"
@@ -40,42 +42,46 @@ const LoginForm: FC<LoginFormProps> = ({
       borderTopLeftRadius="l"
       paddingTop="xl">
       <Input
-        label="Email"
+        label={t('common.email')}
         icon="message"
-        placeholder="Add your email"
+        placeholder={t('auth.addEmail')}
         value={values.email}
         onChanceText={handleChange('email')}
         touched={touched.email}
         error={errors.email}
         onBlur={handleBlur('email')}
         returnKeyType="next"
-        returnKeyLabel="Next"
+        returnKeyLabel={t('common.next')}
         onSubmitEditing={() => password.current?.focus()}
       />
       <Input
-        label="Password"
+        label={t('common.password')}
         icon="lock"
-        placeholder="Enter your password"
+        placeholder={t('auth.addPassword')}
         value={values.password}
         onChanceText={handleChange('password')}
         touched={touched.password}
         error={errors.password}
         onBlur={handleBlur('password')}
         returnKeyType="next"
-        returnKeyLabel="Next"
+        returnKeyLabel={t('common.next')}
         secureTextEntry
         onSubmitEditing={handleSubmit}
       />
       <Box paddingVertical="s">
-        <Link onPress={onPressForgot} label="Forgot password ?" />
+        <Link onPress={onPressForgot} label={t('auth.forgotPassword')} />
       </Box>
       <Box paddingVertical="s">
-        <Button label="Login" onPress={handleSubmit} variant="primary" />
+        <Button
+          label={t('auth.login')}
+          onPress={handleSubmit}
+          variant="primary"
+        />
       </Box>
       <Box paddingVertical="s">
         <Link
           onPress={onPressCreate}
-          label="Don’t have an account? Sign Up"
+          label={t('auth.dontHaveAccount')}
           alignment="center"
         />
       </Box>
