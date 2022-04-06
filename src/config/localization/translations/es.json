@@ -1,5 +1,25 @@
 {
-  "findGadget": "Encuentra tus gadgets",
-  "discoverProducts": "Descubre productos originales",
-  "hottestDeals": "Las mejores ofertas en la web"
+  "onboarding": {
+    "findGadget": "Encuentra tus gadgets",
+    "discoverProducts": "Descubre productos originales",
+    "hottestDeals": "Las mejores ofertas en la web"
+  },
+  "common": {
+    "email": "Correo electrónico",
+    "next": "Siguiente",
+    "password": "Contraseña"
+  },
+  "auth": {
+    "createAccount": "Crear Cuenta",
+    "welcomeBack": "Bienvenido",
+    "signUp": "Crea tu cuenta",
+    "login": "Iniciar sesión",
+    "addEmail": "Ingresa tu correo electrónico",
+    "addPassword": "Ingresa tu contraseña",
+    "repeatPassword": "Repite tu contraseña",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "confirmPassword": "Confirma tu contraseña",
+    "dontHaveAccount": "¿No tienes una cuenta? crea tu cuenta",
+    "haveAccount": "¿Ya tienes una cuenta?, Inicia sesión"
+  }
 }
