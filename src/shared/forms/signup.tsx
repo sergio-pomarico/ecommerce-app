@@ -48,7 +48,7 @@ const SignUpForm: FC<SignUpFormProps> = ({onSubmit, onPressLogin}) => {
       <Input
         label={t('common.email')}
         icon="message"
-        placeholder={t('auth.addEmail')}
+        placeholder={t('auth.add_email')}
         value={values.email}
         onChanceText={handleChange('email')}
         touched={touched.email}
@@ -61,7 +61,7 @@ const SignUpForm: FC<SignUpFormProps> = ({onSubmit, onPressLogin}) => {
       <Input
         label={t('common.password')}
         icon="lock"
-        placeholder={t('auth.addPassword')}
+        placeholder={t('auth.add_password')}
         value={values.password}
         onChanceText={handleChange('password')}
         touched={touched.password}
@@ -73,9 +73,9 @@ const SignUpForm: FC<SignUpFormProps> = ({onSubmit, onPressLogin}) => {
         onSubmitEditing={() => passwordConfirmation.current?.focus()}
       />
       <Input
-        label={t('auth.repeatPassword')}
+        label={t('auth.repeat_password')}
         icon="lock"
-        placeholder={t('auth.confirmPassword')}
+        placeholder={t('auth.confirm_password')}
         value={values.passwordConfirmation}
         onChanceText={handleChange('passwordConfirmation')}
         touched={touched.passwordConfirmation}
@@ -87,7 +87,7 @@ const SignUpForm: FC<SignUpFormProps> = ({onSubmit, onPressLogin}) => {
       />
       <Box paddingVertical="s">
         <Button
-          label={t('auth.signUp')}
+          label={t('auth.sign_up')}
           onPress={handleSubmit}
           variant="primary"
         />
@@ -95,7 +95,7 @@ const SignUpForm: FC<SignUpFormProps> = ({onSubmit, onPressLogin}) => {
       <Box paddingVertical="s">
         <Link
           onPress={onPressLogin}
-          label={t('auth.haveAccount')}
+          label={t('auth.have_account')}
           alignment="center"
         />
       </Box>

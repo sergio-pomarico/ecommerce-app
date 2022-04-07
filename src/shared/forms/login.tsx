@@ -44,7 +44,7 @@ const LoginForm: FC<LoginFormProps> = ({
       <Input
         label={t('common.email')}
         icon="message"
-        placeholder={t('auth.addEmail')}
+        placeholder={t('auth.add_email')}
         value={values.email}
         onChanceText={handleChange('email')}
         touched={touched.email}
@@ -57,7 +57,7 @@ const LoginForm: FC<LoginFormProps> = ({
       <Input
         label={t('common.password')}
         icon="lock"
-        placeholder={t('auth.addPassword')}
+        placeholder={t('auth.add_password')}
         value={values.password}
         onChanceText={handleChange('password')}
         touched={touched.password}
@@ -69,7 +69,7 @@ const LoginForm: FC<LoginFormProps> = ({
         onSubmitEditing={handleSubmit}
       />
       <Box paddingVertical="s">
-        <Link onPress={onPressForgot} label={t('auth.forgotPassword')} />
+        <Link onPress={onPressForgot} label={t('auth.forgot_password')} />
       </Box>
       <Box paddingVertical="s">
         <Button
@@ -81,7 +81,7 @@ const LoginForm: FC<LoginFormProps> = ({
       <Box paddingVertical="s">
         <Link
           onPress={onPressCreate}
-          label={t('auth.dontHaveAccount')}
+          label={t('auth.dont_have_account')}
           alignment="center"
         />
       </Box>

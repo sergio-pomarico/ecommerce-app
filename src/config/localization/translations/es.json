@@ -1,8 +1,8 @@
 {
   "onboarding": {
-    "findGadget": "Encuentra tus gadgets",
-    "discoverProducts": "Descubre productos originales",
-    "hottestDeals": "Las mejores ofertas en la web"
+    "find_gadget": "Encuentra tus gadgets",
+    "discove_products": "Descubre productos originales",
+    "hottest_deals": "Las mejores ofertas en la web"
   },
   "common": {
     "email": "Correo electrónico",
@@ -10,16 +10,16 @@
     "password": "Contraseña"
   },
   "auth": {
-    "createAccount": "Crear Cuenta",
-    "welcomeBack": "Bienvenido",
-    "signUp": "Crea tu cuenta",
+    "create_account": "Crear Cuenta",
+    "welcome_back": "Bienvenido",
+    "sign_up": "Crea tu cuenta",
     "login": "Iniciar sesión",
-    "addEmail": "Ingresa tu correo electrónico",
-    "addPassword": "Ingresa tu contraseña",
-    "repeatPassword": "Repite tu contraseña",
-    "forgotPassword": "¿Olvidaste tu contraseña?",
-    "confirmPassword": "Confirma tu contraseña",
-    "dontHaveAccount": "¿No tienes una cuenta? crea tu cuenta",
-    "haveAccount": "¿Ya tienes una cuenta?, Inicia sesión"
+    "add_email": "Ingresa tu correo electrónico",
+    "add_password": "Ingresa tu contraseña",
+    "repeat_password": "Repite tu contraseña",
+    "forgot_password": "¿Olvidaste tu contraseña?",
+    "confirm_password": "Confirma tu contraseña",
+    "dont_have_account": "¿No tienes una cuenta? crea tu cuenta",
+    "have_account": "¿Ya tienes una cuenta?, Inicia sesión"
   }
 }

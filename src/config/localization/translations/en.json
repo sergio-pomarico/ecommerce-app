@@ -1,8 +1,8 @@
 {
   "onboarding": {
-    "findGadget": "Find your Gadget",
-    "discoverProducts": "Discover original products",
-    "hottestDeals": "Hottest deals around the web"
+    "find_gadget": "Find your Gadget",
+    "discover_products": "Discover original products",
+    "hottest_deals": "Hottest deals around the web"
   },
   "common": {
     "email": "Email",
@@ -10,16 +10,16 @@
     "password": "Password"
   },
   "auth": {
-    "createAccount": "Create Account",
-    "welcomeBack": "Welcome Back",
-    "signUp": "Create your account",
+    "create_account": "Create Account",
+    "welcome_back": "Welcome Back",
+    "sign_up": "Create your account",
     "login": "Login",
-    "addEmail": "Add your email",
-    "addPassword": "Add your password",
-    "repeatPassword": "Repeat your password",
-    "forgotPassword": "Forgot your password?",
-    "confirmPassword": "Confirm your password",
-    "dontHaveAccount": "Don’t have an account? Sign Up",
-    "haveAccount": "Have an account ?, Login"
+    "ad_email": "Add your email",
+    "add_password": "Add your password",
+    "repeat_password": "Repeat your password",
+    "forgot_password": "Forgot your password?",
+    "confirm_password": "Confirm your password",
+    "dont_have_account": "Don’t have an account? Sign Up",
+    "have_account": "Have an account ?, Login"
   }
 }

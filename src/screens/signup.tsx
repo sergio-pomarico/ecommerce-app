@@ -26,7 +26,7 @@ const SignUpScreen = ({
       />
       <Box paddingHorizontal="l" paddingVertical="xl">
         <Text variant="hero" textAlign="left">
-          {t('auth.createAccount')}
+          {t('auth.create_account')}
         </Text>
       </Box>
       <SignUpForm

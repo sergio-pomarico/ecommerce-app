@@ -25,7 +25,7 @@ const LoginScreen = ({
       />
       <Box paddingHorizontal="l" paddingVertical="xl">
         <Text variant="hero" textAlign="left">
-          {t('auth.welcomeBack')}
+          {t('auth.welcome_back')}
         </Text>
       </Box>
       <LoginForm
