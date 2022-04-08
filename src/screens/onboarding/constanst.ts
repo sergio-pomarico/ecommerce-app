@@ -10,7 +10,7 @@ export const slides = [
     color: '#7DCCEC',
   },
   {
-    title: 'onboarding.hottes_deals',
+    title: 'onboarding.hottest_deals',
     image: require('@assets/app.png'),
     color: '#F7B6C1',
   },
