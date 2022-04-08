@@ -15,6 +15,7 @@ module.exports = {
           '@routes': './src/routes',
           '@screens': './src/screens',
           '@store': './src/store',
+          '@utils': './src/utils',
         },
       },
     ],

@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import {Modal, TouchableOpacity} from 'react-native';
 import {Box, Button, Text} from '@components';
 import {makeStyle, Theme, useTheme} from '@config/theme';
-import {useModal} from 'hooks/modal';
+import {useModal} from '@utils/modal';
 
 const ModalWrapper: FC = () => {
   const style = useStyles();
