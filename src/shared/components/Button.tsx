@@ -9,6 +9,7 @@ interface ButtonProps {
   onPress: () => void;
   style?: ViewStyle;
   size?: 'large' | 'medium';
+  disabled?: boolean;
 }
 
 const Button: FC<ButtonProps> = ({
@@ -17,6 +18,7 @@ const Button: FC<ButtonProps> = ({
   label,
   onPress,
   style,
+  disabled = false,
 }) => {
   const theme = useTheme();
   const styles = useStyles();
@@ -34,8 +36,10 @@ const Button: FC<ButtonProps> = ({
         style,
         {backgroundColor, maxHeight, width},
         variant === 'outline' ? styles.border : {},
+        disabled ? styles.disabled : {},
       ]}
-      onPress={onPress}>
+      onPress={onPress}
+      disabled={disabled}>
       <Text
         style={{color}}
         variant={size === 'medium' ? 'button_medium' : 'button_large'}>
@@ -61,6 +65,9 @@ const useStyles = makeStyle((theme: Theme) => ({
   border: {
     borderColor: theme.colors.primary,
     borderWidth: 1,
+  },
+  disabled: {
+    opacity: 0.75,
   },
 }));
 

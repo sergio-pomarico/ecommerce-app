@@ -24,16 +24,24 @@ const SignUpSchema = Yup.object().shape({
 });
 
 const SignUpForm: FC<SignUpFormProps> = ({onSubmit, onPressLogin}) => {
-  const {values, handleChange, handleBlur, touched, errors, handleSubmit} =
-    useFormik({
-      initialValues: {
-        email: '',
-        password: '',
-        passwordConfirmation: '',
-      },
-      validationSchema: SignUpSchema,
-      onSubmit: inputs => onSubmit(inputs),
-    });
+  const {
+    values,
+    handleChange,
+    handleBlur,
+    touched,
+    errors,
+    handleSubmit,
+    isValid,
+    dirty,
+  } = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+      passwordConfirmation: '',
+    },
+    validationSchema: SignUpSchema,
+    onSubmit: inputs => onSubmit(inputs),
+  });
   const password = useRef<TextInput>(null);
   const passwordConfirmation = useRef<TextInput>(null);
   const {t} = useTranslation();
@@ -90,6 +98,7 @@ const SignUpForm: FC<SignUpFormProps> = ({onSubmit, onPressLogin}) => {
           label={t('auth.sign_up')}
           onPress={handleSubmit}
           variant="primary"
+          disabled={!(isValid && dirty)}
         />
       </Box>
       <Box paddingVertical="s">

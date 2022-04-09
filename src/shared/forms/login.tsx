@@ -22,15 +22,23 @@ const LoginForm: FC<LoginFormProps> = ({
   onPressForgot,
   onPressCreate,
 }) => {
-  const {values, handleChange, handleBlur, touched, errors, handleSubmit} =
-    useFormik({
-      initialValues: {
-        email: '',
-        password: '',
-      },
-      validationSchema: LoginSchema,
-      onSubmit: inputs => onSubmit(inputs),
-    });
+  const {
+    values,
+    handleChange,
+    handleBlur,
+    touched,
+    errors,
+    handleSubmit,
+    isValid,
+    dirty,
+  } = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    validationSchema: LoginSchema,
+    onSubmit: inputs => onSubmit(inputs),
+  });
   const password = useRef<TextInput>(null);
   const {t} = useTranslation();
   return (
@@ -76,6 +84,7 @@ const LoginForm: FC<LoginFormProps> = ({
           label={t('auth.login')}
           onPress={handleSubmit}
           variant="primary"
+          disabled={!(isValid && dirty)}
         />
       </Box>
       <Box paddingVertical="s">
