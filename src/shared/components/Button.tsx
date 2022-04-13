@@ -10,6 +10,7 @@ interface ButtonProps {
   style?: ViewStyle;
   size?: 'large' | 'medium';
   disabled?: boolean;
+  testID?: string;
 }
 
 const Button: FC<ButtonProps> = ({
@@ -19,6 +20,7 @@ const Button: FC<ButtonProps> = ({
   onPress,
   style,
   disabled = false,
+  testID,
 }) => {
   const theme = useTheme();
   const styles = useStyles();
@@ -39,7 +41,8 @@ const Button: FC<ButtonProps> = ({
         disabled ? styles.disabled : {},
       ]}
       onPress={onPress}
-      disabled={disabled}>
+      disabled={disabled}
+      testID={testID}>
       <Text
         style={{color}}
         variant={size === 'medium' ? 'button_medium' : 'button_large'}>
