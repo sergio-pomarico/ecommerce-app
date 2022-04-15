@@ -9,7 +9,7 @@ import {Box, Button, Input, Link} from '@components';
 interface LoginFormProps {
   onSubmit: (form: {email: string; password: string}) => void;
   onPressForgot: () => void;
-  onPressCreate: () => void;
+  onPressSignUp: () => void;
 }
 
 const LoginSchema = Yup.object().shape({
@@ -20,7 +20,7 @@ const LoginSchema = Yup.object().shape({
 const LoginForm: FC<LoginFormProps> = ({
   onSubmit,
   onPressForgot,
-  onPressCreate,
+  onPressSignUp,
 }) => {
   const {
     values,
@@ -61,6 +61,7 @@ const LoginForm: FC<LoginFormProps> = ({
         returnKeyType="next"
         returnKeyLabel={t('common.next')}
         onSubmitEditing={() => password.current?.focus()}
+        testID="email_input"
       />
       <Input
         label={t('common.password')}
@@ -75,9 +76,14 @@ const LoginForm: FC<LoginFormProps> = ({
         returnKeyLabel={t('common.next')}
         secureTextEntry
         onSubmitEditing={handleSubmit}
+        testID="password_input"
       />
       <Box paddingVertical="s">
-        <Link onPress={onPressForgot} label={t('auth.forgot_password')} />
+        <Link
+          onPress={onPressForgot}
+          label={t('auth.forgot_password')}
+          testID="btn_forgot_password"
+        />
       </Box>
       <Box paddingVertical="s">
         <Button
@@ -85,13 +91,15 @@ const LoginForm: FC<LoginFormProps> = ({
           onPress={handleSubmit}
           variant="primary"
           disabled={!(isValid && dirty)}
+          testID="btn_login"
         />
       </Box>
       <Box paddingVertical="s">
         <Link
-          onPress={onPressCreate}
+          onPress={onPressSignUp}
           label={t('auth.dont_have_account')}
           alignment="center"
+          testID="btn_sign_up"
         />
       </Box>
     </Box>
