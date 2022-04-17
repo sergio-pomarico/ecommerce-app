@@ -61,7 +61,7 @@ const LoginForm: FC<LoginFormProps> = ({
         returnKeyType="next"
         returnKeyLabel={t('common.next')}
         onSubmitEditing={() => password.current?.focus()}
-        testID="email_input"
+        testID="input_email"
       />
       <Input
         label={t('common.password')}
@@ -76,7 +76,7 @@ const LoginForm: FC<LoginFormProps> = ({
         returnKeyLabel={t('common.next')}
         secureTextEntry
         onSubmitEditing={handleSubmit}
-        testID="password_input"
+        testID="input_password"
       />
       <Box paddingVertical="s">
         <Link

@@ -1,0 +1,430 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginForm test suite check if the Login Form render correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderTopLeftRadius": 25,
+        "borderTopRightRadius": 25,
+        "display": "flex",
+        "flex": 1,
+        "padding": 32,
+        "paddingTop": 64,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "display": "flex",
+          "height": 120,
+          "justifyContent": "flex-start",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "flex-start",
+            "borderBottomColor": "#9A9A9D",
+            "borderBottomWidth": 0.5,
+            "display": "flex",
+            "marginBottom": 8,
+            "paddingBottom": 16,
+            "width": "100%",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "flex-end",
+              "display": "flex",
+              "flexDirection": "row",
+              "justifyContent": "flex-end",
+              "marginBottom": 16,
+            },
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          selectable={false}
+          style={
+            Array [
+              Object {
+                "color": "#868686",
+                "fontSize": 24,
+              },
+              undefined,
+              Object {
+                "fontFamily": "codeo",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#868686",
+                "display": "flex",
+                "fontFamily": "Raleway-SemiBold",
+                "fontSize": 15,
+                "lineHeight": 18,
+                "marginLeft": 8,
+                "textTransform": "capitalize",
+              },
+            ]
+          }
+        >
+          common.email
+        </Text>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "display": "flex",
+              "flexDirection": "row",
+            },
+          ]
+        }
+      >
+        <TextInput
+          autoCapitalize="none"
+          onBlur={[Function]}
+          onChangeText={[Function]}
+          onSubmitEditing={[Function]}
+          placeholder="auth.add_email"
+          returnKeyLabel="common.next"
+          returnKeyType="next"
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+          testID="input_email"
+          underlineColorAndroid="transparent"
+          value=""
+        />
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "display": "flex",
+          "height": 120,
+          "justifyContent": "flex-start",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "flex-start",
+            "borderBottomColor": "#9A9A9D",
+            "borderBottomWidth": 0.5,
+            "display": "flex",
+            "marginBottom": 8,
+            "paddingBottom": 16,
+            "width": "100%",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "flex-end",
+              "display": "flex",
+              "flexDirection": "row",
+              "justifyContent": "flex-end",
+              "marginBottom": 16,
+            },
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          selectable={false}
+          style={
+            Array [
+              Object {
+                "color": "#868686",
+                "fontSize": 24,
+              },
+              undefined,
+              Object {
+                "fontFamily": "codeo",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#868686",
+                "display": "flex",
+                "fontFamily": "Raleway-SemiBold",
+                "fontSize": 15,
+                "lineHeight": 18,
+                "marginLeft": 8,
+                "textTransform": "capitalize",
+              },
+            ]
+          }
+        >
+          common.password
+        </Text>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "display": "flex",
+              "flexDirection": "row",
+            },
+          ]
+        }
+      >
+        <TextInput
+          autoCapitalize="none"
+          onBlur={[Function]}
+          onChangeText={[Function]}
+          onSubmitEditing={[Function]}
+          placeholder="auth.add_password"
+          returnKeyLabel="common.next"
+          returnKeyType="next"
+          secureTextEntry={true}
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+          testID="input_password"
+          underlineColorAndroid="transparent"
+          value=""
+        />
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            selectable={false}
+            style={
+              Array [
+                Object {
+                  "color": "#5956E9",
+                  "fontSize": 24,
+                },
+                undefined,
+                Object {
+                  "fontFamily": "codeo",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "display": "flex",
+          "paddingVertical": 16,
+        },
+      ]
+    }
+  >
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      nativeID="animatedComponent"
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID="btn_forgot_password"
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#5956E9",
+              "display": "flex",
+              "fontSize": 16,
+              "textAlign": "left",
+            },
+          ]
+        }
+      >
+        auth.forgot_password
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "display": "flex",
+          "paddingVertical": 16,
+        },
+      ]
+    }
+  >
+    <View
+      accessibilityState={
+        Object {
+          "disabled": true,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      nativeID="animatedComponent"
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignContent": "center",
+          "alignSelf": "center",
+          "backgroundColor": "#5956E9",
+          "borderRadius": 10,
+          "flex": 1,
+          "height": 70,
+          "justifyContent": "center",
+          "maxHeight": 70,
+          "opacity": 0.75,
+          "width": "100%",
+        }
+      }
+      testID="btn_login"
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "display": "flex",
+              "fontFamily": "Raleway-Bold",
+              "fontSize": 20,
+              "lineHeight": 24,
+              "textAlign": "center",
+            },
+            Object {
+              "color": "#FFFFFF",
+            },
+          ]
+        }
+      >
+        auth.login
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "display": "flex",
+          "paddingVertical": 16,
+        },
+      ]
+    }
+  >
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      nativeID="animatedComponent"
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID="btn_sign_up"
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#5956E9",
+              "display": "flex",
+              "fontSize": 16,
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        auth.dont_have_account
+      </Text>
+    </View>
+  </View>
+</View>
+`;
