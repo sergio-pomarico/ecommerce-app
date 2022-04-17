@@ -65,6 +65,7 @@ const SignUpForm: FC<SignUpFormProps> = ({onSubmit, onPressLogin}) => {
         returnKeyType="next"
         returnKeyLabel={t('auth.next')}
         onSubmitEditing={() => password.current?.focus()}
+        testID="input_email"
       />
       <Input
         label={t('common.password')}
@@ -79,6 +80,7 @@ const SignUpForm: FC<SignUpFormProps> = ({onSubmit, onPressLogin}) => {
         returnKeyLabel={t('common.next')}
         secureTextEntry
         onSubmitEditing={() => passwordConfirmation.current?.focus()}
+        testID="input_password"
       />
       <Input
         label={t('auth.repeat_password')}
@@ -92,6 +94,7 @@ const SignUpForm: FC<SignUpFormProps> = ({onSubmit, onPressLogin}) => {
         secureTextEntry
         returnKeyType="send"
         onSubmitEditing={handleSubmit}
+        testID="input_comfirm_password"
       />
       <Box paddingVertical="s">
         <Button
@@ -99,6 +102,7 @@ const SignUpForm: FC<SignUpFormProps> = ({onSubmit, onPressLogin}) => {
           onPress={handleSubmit}
           variant="primary"
           disabled={!(isValid && dirty)}
+          testID="btn_sign_up"
         />
       </Box>
       <Box paddingVertical="s">
@@ -106,6 +110,7 @@ const SignUpForm: FC<SignUpFormProps> = ({onSubmit, onPressLogin}) => {
           onPress={onPressLogin}
           label={t('auth.have_account')}
           alignment="center"
+          testID="btn_login"
         />
       </Box>
     </Box>
