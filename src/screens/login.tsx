@@ -31,7 +31,7 @@ const LoginScreen = ({
       <LoginForm
         onSubmit={form => dispatch(loginAttempt(form))}
         onPressForgot={() => {}}
-        onPressCreate={() => navigate('SignUp')}
+        onPressSignUp={() => navigate('SignUp')}
       />
     </Container>
   );

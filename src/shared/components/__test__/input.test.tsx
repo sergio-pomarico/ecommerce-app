@@ -22,7 +22,7 @@ describe('Input test suite', () => {
     );
     expect(toJSON()).toMatchSnapshot();
   });
-  test('forwards all props to the Input', () => {
+  test('check if the Input change text correctly', () => {
     const {getByTestId} = render(
       <ThemeProvider>
         <Input {...props} />
@@ -30,10 +30,17 @@ describe('Input test suite', () => {
     );
 
     const input = getByTestId(testID);
-
     fireEvent.changeText(input, 'testing!');
-
-    expect(props.onChanceText).toHaveBeenCalled();
     expect(props.onChanceText).toHaveBeenCalledWith('testing!');
+  });
+
+  test('check if the Input show error correctly', () => {
+    const {getByTestId} = render(
+      <ThemeProvider>
+        <Input {...props} error="is required" touched />
+      </ThemeProvider>,
+    );
+    const error = getByTestId(`${testID}_error`);
+    expect(error).not.toBeNull();
   });
 });

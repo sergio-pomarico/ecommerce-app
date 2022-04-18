@@ -82,7 +82,11 @@ const Input = forwardRef<TextInput, InputProps>(
             )}
           </Box>
         </Box>
-        {!touched ? null : !error ? null : <Text color="error">{error}</Text>}
+        {error !== undefined && touched && (
+          <Text color="error" testID={`${testID}_error`}>
+            {error}
+          </Text>
+        )}
       </Box>
     );
   },
