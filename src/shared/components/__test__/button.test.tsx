@@ -6,6 +6,9 @@ describe('Button test suite', () => {
   const onPressMock = jest.fn();
   const label = 'Next';
   const testID = 'btn-component';
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
 
   test('check if the button render correctly', () => {
     const {getByText} = render(
@@ -28,7 +31,6 @@ describe('Button test suite', () => {
     expect(onPressMock).toBeCalled();
   });
   test('check if the button is disabled correctly', () => {
-    jest.clearAllMocks();
     const {getByTestId} = render(
       <Button
         onPress={onPressMock}
