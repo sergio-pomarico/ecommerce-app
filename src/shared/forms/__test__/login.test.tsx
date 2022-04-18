@@ -40,10 +40,12 @@ describe('LoginForm test suite', () => {
     const email = getByTestId('input_email');
     const password = getByTestId('input_password');
     const buton = getByTestId('btn_login');
+
+    fireEvent.changeText(email, emailMock);
+    fireEvent.changeText(password, passwordMock);
+    fireEvent.press(buton);
+
     await waitFor(() => {
-      fireEvent.changeText(email, emailMock);
-      fireEvent.changeText(password, passwordMock);
-      fireEvent.press(buton);
       expect(onSubmitMock).toHaveBeenCalledWith({
         email: emailMock,
         password: passwordMock,

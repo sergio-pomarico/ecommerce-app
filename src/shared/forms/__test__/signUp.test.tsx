@@ -36,11 +36,13 @@ describe('SignUp test suite', () => {
     const password = getByTestId('input_password');
     const confirm_password = getByTestId('input_comfirm_password');
     const buton = getByTestId('btn_sign_up');
+
+    fireEvent.changeText(email, emailMock);
+    fireEvent.changeText(password, passwordMock);
+    fireEvent.changeText(confirm_password, passwordMock);
+    fireEvent.press(buton);
+
     await waitFor(() => {
-      fireEvent.changeText(email, emailMock);
-      fireEvent.changeText(password, passwordMock);
-      fireEvent.changeText(confirm_password, passwordMock);
-      fireEvent.press(buton);
       expect(onSubmitMock).toHaveBeenCalledWith({
         email: emailMock,
         password: passwordMock,

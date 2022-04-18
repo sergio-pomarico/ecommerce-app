@@ -61,7 +61,8 @@
   "jest": {
     "preset": "react-native",
     "setupFiles": [
-      "./node_modules/react-native-gesture-handler/jestSetup.js"
+      "./node_modules/react-native-gesture-handler/jestSetup.js",
+      "<rootDir>/__mocks__/reanimated.ts"
     ],
     "setupFilesAfterEnv": [
       "@testing-library/jest-native/extend-expect"
