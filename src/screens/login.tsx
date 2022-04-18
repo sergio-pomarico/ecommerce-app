@@ -7,12 +7,14 @@ import {AuthRoutes, StackNavigationProps} from '@core/types/navigation';
 import {Box, Container, Loading, Text} from '@components';
 import {useTheme} from '@config/theme';
 import LoginForm from '@forms/login';
-import {showLoading} from '@store/ui/actions';
+import {loginAttempt} from '@store/auth/actions';
+import {useTranslation} from 'react-i18next';
 
 const LoginScreen = ({
   navigation,
 }: StackNavigationProps<AuthRoutes, 'Login'>) => {
   const theme = useTheme();
+  const {t} = useTranslation();
   const dispatch = useDispatch();
   const {navigate} = navigation;
   return (
@@ -23,13 +25,13 @@ const LoginScreen = ({
       />
       <Box paddingHorizontal="l" paddingVertical="xl">
         <Text variant="hero" textAlign="left">
-          Welcome Back
+          {t('auth.welcome_back')}
         </Text>
       </Box>
       <LoginForm
-        onSubmit={() => dispatch(showLoading(true))}
+        onSubmit={form => dispatch(loginAttempt(form))}
         onPressForgot={() => {}}
-        onPressCreate={() => navigate('SignUp')}
+        onPressSignUp={() => navigate('SignUp')}
       />
     </Container>
   );

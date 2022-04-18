@@ -12,14 +12,16 @@ import {all} from 'redux-saga/effects';
 
 // Reducers & Sagas
 import {UIReducer} from './ui';
+import {authReducer, authSaga} from './auth';
 
 const reducers: Reducer<any, AnyAction> = combineReducers({
   ui: UIReducer,
+  auth: authReducer,
 });
 
 // Saga
 function* rootSaga() {
-  yield all([]);
+  yield all([...authSaga]);
 }
 
 const sagaMiddleware = createSagaMiddleware();

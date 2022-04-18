@@ -1,16 +1,16 @@
 export const slides = [
   {
-    title: 'Find your Gadget',
+    title: 'onboarding.find_gadget',
     image: require('@assets/vr.png'),
     color: '#5956E9',
   },
   {
-    title: 'Discover original products',
+    title: 'onboarding.discove_products',
     image: require('@assets/girl.png'),
     color: '#7DCCEC',
   },
   {
-    title: 'Hottest deals around the web',
+    title: 'onboarding.hottest_deals',
     image: require('@assets/app.png'),
     color: '#F7B6C1',
   },

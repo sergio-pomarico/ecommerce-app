@@ -6,6 +6,7 @@ import Animated, {
   SharedValue,
   useAnimatedStyle,
 } from 'react-native-reanimated';
+import {useTranslation} from 'react-i18next';
 
 import {Box, Text} from '@components';
 import {makeStyle, Theme} from '@config/theme';
@@ -21,6 +22,7 @@ const {height, width} = Dimensions.get('window');
 
 const Slide: FC<SlideProps> = ({title, image, index, currentIndex}) => {
   const inputRange = [index - 1, index, index + 1];
+  const {t} = useTranslation();
   const textStyle = useAnimatedStyle(() => {
     const opacity = interpolate(
       currentIndex.value,
@@ -61,7 +63,7 @@ const Slide: FC<SlideProps> = ({title, image, index, currentIndex}) => {
   return (
     <Box style={styles.slide}>
       <Animated.View style={[textStyle, styles.text]}>
-        <Text variant="hero">{title}</Text>
+        <Text variant="hero">{t(title)}</Text>
       </Animated.View>
       <Animated.Image source={image} style={[styles.image, imageStyle]} />
     </Box>

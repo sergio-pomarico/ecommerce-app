@@ -1,0 +1,25 @@
+{
+  "onboarding": {
+    "find_gadget": "Find your Gadget",
+    "discover_products": "Discover original products",
+    "hottest_deals": "Hottest deals around the web"
+  },
+  "common": {
+    "email": "Email",
+    "next": "Next",
+    "password": "Password"
+  },
+  "auth": {
+    "create_account": "Create Account",
+    "welcome_back": "Welcome Back",
+    "sign_up": "Create your account",
+    "login": "Login",
+    "ad_email": "Add your email",
+    "add_password": "Add your password",
+    "repeat_password": "Repeat your password",
+    "forgot_password": "Forgot your password?",
+    "confirm_password": "Confirm your password",
+    "dont_have_account": "Don’t have an account? Sign Up",
+    "have_account": "Have an account ?, Login"
+  }
+}

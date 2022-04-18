@@ -1,14 +1,15 @@
 import React, {FC, useRef} from 'react';
 import {TextInput} from 'react-native';
+import {useTranslation} from 'react-i18next';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
 
 import {Box, Button, Input, Link} from '@components';
 
 interface LoginFormProps {
-  onSubmit: (form: object) => void;
+  onSubmit: (form: {email: string; password: string}) => void;
   onPressForgot: () => void;
-  onPressCreate: () => void;
+  onPressSignUp: () => void;
 }
 
 const LoginSchema = Yup.object().shape({
@@ -19,18 +20,27 @@ const LoginSchema = Yup.object().shape({
 const LoginForm: FC<LoginFormProps> = ({
   onSubmit,
   onPressForgot,
-  onPressCreate,
+  onPressSignUp,
 }) => {
-  const {values, handleChange, handleBlur, touched, errors, handleSubmit} =
-    useFormik({
-      initialValues: {
-        email: '',
-        password: '',
-      },
-      validationSchema: LoginSchema,
-      onSubmit: inputs => onSubmit(inputs),
-    });
+  const {
+    values,
+    handleChange,
+    handleBlur,
+    touched,
+    errors,
+    handleSubmit,
+    isValid,
+    dirty,
+  } = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    validationSchema: LoginSchema,
+    onSubmit: inputs => onSubmit(inputs),
+  });
   const password = useRef<TextInput>(null);
+  const {t} = useTranslation();
   return (
     <Box
       backgroundColor="white"
@@ -40,43 +50,56 @@ const LoginForm: FC<LoginFormProps> = ({
       borderTopLeftRadius="l"
       paddingTop="xl">
       <Input
-        label="Email"
+        label={t('common.email')}
         icon="message"
-        placeholder="Add your email"
+        placeholder={t('auth.add_email')}
         value={values.email}
         onChanceText={handleChange('email')}
         touched={touched.email}
         error={errors.email}
         onBlur={handleBlur('email')}
         returnKeyType="next"
-        returnKeyLabel="Next"
+        returnKeyLabel={t('common.next')}
         onSubmitEditing={() => password.current?.focus()}
+        testID="input_email"
       />
       <Input
-        label="Password"
+        label={t('common.password')}
         icon="lock"
-        placeholder="Enter your password"
+        placeholder={t('auth.add_password')}
         value={values.password}
         onChanceText={handleChange('password')}
         touched={touched.password}
         error={errors.password}
         onBlur={handleBlur('password')}
         returnKeyType="next"
-        returnKeyLabel="Next"
+        returnKeyLabel={t('common.next')}
         secureTextEntry
         onSubmitEditing={handleSubmit}
+        testID="input_password"
       />
       <Box paddingVertical="s">
-        <Link onPress={onPressForgot} label="Forgot password ?" />
+        <Link
+          onPress={onPressForgot}
+          label={t('auth.forgot_password')}
+          testID="btn_forgot_password"
+        />
       </Box>
       <Box paddingVertical="s">
-        <Button label="Login" onPress={handleSubmit} variant="primary" />
+        <Button
+          label={t('auth.login')}
+          onPress={handleSubmit}
+          variant="primary"
+          disabled={!(isValid && dirty)}
+          testID="btn_login"
+        />
       </Box>
       <Box paddingVertical="s">
         <Link
-          onPress={onPressCreate}
-          label="Don’t have an account? Sign Up"
+          onPress={onPressSignUp}
+          label={t('auth.dont_have_account')}
           alignment="center"
+          testID="btn_sign_up"
         />
       </Box>
     </Box>

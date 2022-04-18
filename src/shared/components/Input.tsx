@@ -17,10 +17,11 @@ interface InputProps extends TextInputProps {
   error: string | undefined;
   touched: boolean | undefined;
   label: string;
+  testID?: string;
 }
 
 const Input = forwardRef<TextInput, InputProps>(
-  ({onChanceText, label, icon, ...props}, ref) => {
+  ({onChanceText, label, icon, testID, ...props}, ref) => {
     const {value = '', touched, error, secureTextEntry} = props;
     const [text, setText] = useState<string>(value);
     const [hideText, setHideText] = useState<boolean | undefined>(
@@ -67,6 +68,7 @@ const Input = forwardRef<TextInput, InputProps>(
               style={styles.input}
               onChangeText={onChange}
               secureTextEntry={hideText}
+              testID={testID}
               {...{value: text}}
             />
             {secureTextEntry && (
@@ -80,7 +82,11 @@ const Input = forwardRef<TextInput, InputProps>(
             )}
           </Box>
         </Box>
-        {!touched ? null : !error ? null : <Text color="error">{error}</Text>}
+        {error !== undefined && touched && (
+          <Text color="error" testID={`${testID}_error`}>
+            {error}
+          </Text>
+        )}
       </Box>
     );
   },
