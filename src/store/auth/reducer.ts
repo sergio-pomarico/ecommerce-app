@@ -3,6 +3,7 @@ import {Action} from '@core/types/redux';
 
 const initialState = {
   user: null,
+  isAuth: true,
 };
 
 export default function authReducer(
