@@ -14,3 +14,7 @@ export type AuthRoutes = {
   SignUp: undefined;
   Login: undefined;
 };
+
+export type AppRoutes = {
+  Home: undefined;
+};
