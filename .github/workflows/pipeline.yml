@@ -2,8 +2,11 @@ name: Run units an integration test
 
 on:
   push:
-    branches:
-      - master
+    branches: [master]
+  pull_request:
+    branches: [master]
+    types: [opened, synchronize]
+
 jobs:
   run_test:
     runs-on: ubuntu-18.04
