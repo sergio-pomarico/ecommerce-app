@@ -1,6 +1,7 @@
 import React from 'react';
 import {fireEvent, render} from '@testing-library/react-native';
 import {Button} from '@components';
+import {ThemeProvider} from '@config/theme';
 
 describe('Button test suite', () => {
   const onPressMock = jest.fn();
@@ -12,19 +13,23 @@ describe('Button test suite', () => {
 
   test('check if the button render correctly', () => {
     const {getByText} = render(
-      <Button onPress={onPressMock} label={label} variant="primary" />,
+      <ThemeProvider>
+        <Button onPress={onPressMock} label={label} variant="primary" />,
+      </ThemeProvider>,
     );
     const button = getByText(label);
     expect(button).not.toBeNull();
   });
   test('check if the button is pressed correctly', () => {
     const {getByTestId} = render(
-      <Button
-        onPress={onPressMock}
-        label={label}
-        variant="primary"
-        testID={testID}
-      />,
+      <ThemeProvider>
+        <Button
+          onPress={onPressMock}
+          label={label}
+          variant="primary"
+          testID={testID}
+        />
+      </ThemeProvider>,
     );
     const button = getByTestId(testID);
     fireEvent.press(button);
@@ -32,13 +37,15 @@ describe('Button test suite', () => {
   });
   test('check if the button is disabled correctly', () => {
     const {getByTestId} = render(
-      <Button
-        onPress={onPressMock}
-        label={label}
-        variant="primary"
-        disabled
-        testID={testID}
-      />,
+      <ThemeProvider>
+        <Button
+          onPress={onPressMock}
+          label={label}
+          variant="primary"
+          disabled
+          testID={testID}
+        />
+      </ThemeProvider>,
     );
     const button = getByTestId(testID);
     fireEvent.press(button);

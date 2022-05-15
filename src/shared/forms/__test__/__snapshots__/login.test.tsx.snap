@@ -8,7 +8,6 @@ exports[`LoginForm test suite check if the Login Form render correctly 1`] = `
         "backgroundColor": "#FFFFFF",
         "borderTopLeftRadius": 25,
         "borderTopRightRadius": 25,
-        "display": "flex",
         "flex": 1,
         "padding": 32,
         "paddingTop": 64,
@@ -20,7 +19,6 @@ exports[`LoginForm test suite check if the Login Form render correctly 1`] = `
     style={
       Array [
         Object {
-          "display": "flex",
           "height": 120,
           "justifyContent": "flex-start",
         },
@@ -34,7 +32,6 @@ exports[`LoginForm test suite check if the Login Form render correctly 1`] = `
             "alignItems": "flex-start",
             "borderBottomColor": "#9A9A9D",
             "borderBottomWidth": 0.5,
-            "display": "flex",
             "marginBottom": 8,
             "paddingBottom": 16,
             "width": "100%",
@@ -47,7 +44,6 @@ exports[`LoginForm test suite check if the Login Form render correctly 1`] = `
           Array [
             Object {
               "alignItems": "flex-end",
-              "display": "flex",
               "flexDirection": "row",
               "justifyContent": "flex-end",
               "marginBottom": 16,
@@ -81,7 +77,6 @@ exports[`LoginForm test suite check if the Login Form render correctly 1`] = `
             Array [
               Object {
                 "color": "#868686",
-                "display": "flex",
                 "fontFamily": "Raleway-SemiBold",
                 "fontSize": 15,
                 "lineHeight": 18,
@@ -98,7 +93,6 @@ exports[`LoginForm test suite check if the Login Form render correctly 1`] = `
         style={
           Array [
             Object {
-              "display": "flex",
               "flexDirection": "row",
             },
           ]
@@ -128,7 +122,6 @@ exports[`LoginForm test suite check if the Login Form render correctly 1`] = `
     style={
       Array [
         Object {
-          "display": "flex",
           "height": 120,
           "justifyContent": "flex-start",
         },
@@ -142,7 +135,6 @@ exports[`LoginForm test suite check if the Login Form render correctly 1`] = `
             "alignItems": "flex-start",
             "borderBottomColor": "#9A9A9D",
             "borderBottomWidth": 0.5,
-            "display": "flex",
             "marginBottom": 8,
             "paddingBottom": 16,
             "width": "100%",
@@ -155,7 +147,6 @@ exports[`LoginForm test suite check if the Login Form render correctly 1`] = `
           Array [
             Object {
               "alignItems": "flex-end",
-              "display": "flex",
               "flexDirection": "row",
               "justifyContent": "flex-end",
               "marginBottom": 16,
@@ -189,7 +180,6 @@ exports[`LoginForm test suite check if the Login Form render correctly 1`] = `
             Array [
               Object {
                 "color": "#868686",
-                "display": "flex",
                 "fontFamily": "Raleway-SemiBold",
                 "fontSize": 15,
                 "lineHeight": 18,
@@ -206,7 +196,6 @@ exports[`LoginForm test suite check if the Login Form render correctly 1`] = `
         style={
           Array [
             Object {
-              "display": "flex",
               "flexDirection": "row",
             },
           ]
@@ -277,7 +266,6 @@ exports[`LoginForm test suite check if the Login Form render correctly 1`] = `
     style={
       Array [
         Object {
-          "display": "flex",
           "paddingVertical": 16,
         },
       ]
@@ -307,7 +295,6 @@ exports[`LoginForm test suite check if the Login Form render correctly 1`] = `
           Array [
             Object {
               "color": "#5956E9",
-              "display": "flex",
               "fontSize": 16,
               "textAlign": "left",
             },
@@ -322,7 +309,6 @@ exports[`LoginForm test suite check if the Login Form render correctly 1`] = `
     style={
       Array [
         Object {
-          "display": "flex",
           "paddingVertical": 16,
         },
       ]
@@ -365,7 +351,6 @@ exports[`LoginForm test suite check if the Login Form render correctly 1`] = `
         style={
           Array [
             Object {
-              "display": "flex",
               "fontFamily": "Raleway-Bold",
               "fontSize": 20,
               "lineHeight": 24,
@@ -385,7 +370,6 @@ exports[`LoginForm test suite check if the Login Form render correctly 1`] = `
     style={
       Array [
         Object {
-          "display": "flex",
           "paddingVertical": 16,
         },
       ]
@@ -415,7 +399,6 @@ exports[`LoginForm test suite check if the Login Form render correctly 1`] = `
           Array [
             Object {
               "color": "#5956E9",
-              "display": "flex",
               "fontSize": 16,
               "textAlign": "center",
             },
