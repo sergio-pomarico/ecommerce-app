@@ -8,7 +8,15 @@ on:
     types: [opened, synchronize]
 
 jobs:
-  run_test:
+  avoid_redundancy:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
+
+  test:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
