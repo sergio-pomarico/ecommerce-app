@@ -20,4 +20,4 @@ jobs:
       - name: Make gradlew executable
         run: cd android && chmod +x ./gradlew
       - name: build prod
-        run: ./gradlew app:bundleRelease
+        run: cd android && ./gradlew app:bundleRelease
