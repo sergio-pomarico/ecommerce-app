@@ -54,10 +54,8 @@ jobs:
         run: cd android && chmod +x ./gradlew
       - name: build prod
         run: cd android && ./gradlew app:bundleRelease
-      - name: debug folder
-        run: ls -las
       - uses: actions/upload-artifact@v3
         with:
           name: 'android-app'
-          path: 'app/build/outputs/bundle/release/app-release.aab'
+          path: 'android/app/build/outputs/bundle/release/app-release.aab'
           dest: 'android-app.aab'
