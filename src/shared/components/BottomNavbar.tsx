@@ -6,6 +6,13 @@ import {Box} from '@components';
 import {Icon} from '@config/icons';
 import {useTheme} from '@config/theme';
 
+const icons = {
+  Home: 'home',
+  Cart: 'cart',
+};
+
+type iconsKey = keyof typeof icons;
+
 const BottomNavbar: FC<BottomTabBarProps> = ({state, navigation}) => {
   const {routeNames, index} = state;
   const {navigate} = navigation;
@@ -32,7 +39,7 @@ const BottomNavbar: FC<BottomTabBarProps> = ({state, navigation}) => {
               alignContent="center"
               justifyContent="center">
               <Icon
-                name="home"
+                name={icons[route as iconsKey]}
                 size={theme.spacing.m}
                 color={isFocused ? theme.colors.primary : theme.colors.text}
                 style={style.icon}
