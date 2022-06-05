@@ -21,5 +21,14 @@
     "confirm_password": "Confirm your password",
     "dont_have_account": "Don’t have an account? Sign Up",
     "have_account": "Have an account ?, Login"
+  },
+  "home": {
+    "title": "Order online\ncollect in store",
+    "tabs": {
+      "wearables": "Wearables",
+      "laptops": "Laptops",
+      "phones": "Smartphones",
+      "drones": "Drones"
+    }
   }
 }

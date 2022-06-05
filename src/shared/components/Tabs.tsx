@@ -9,6 +9,7 @@ import Animated, {
   withSpring,
 } from 'react-native-reanimated';
 import {makeStyle, Theme} from '@config/theme';
+import {useTranslation} from 'react-i18next';
 
 interface Tab {
   title: string;
@@ -24,6 +25,7 @@ const {width} = Dimensions.get('screen');
 
 const Tabs = ({tabs, children}: TabsProps) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const {t} = useTranslation();
 
   const linePosition = useSharedValue(0);
   const contentPosition = useSharedValue(0);
@@ -66,7 +68,7 @@ const Tabs = ({tabs, children}: TabsProps) => {
             onPress={() => setSelectedIndex(index)}
             key={tab.id}>
             <Box paddingVertical="xs">
-              <Text textAlign="center">{tab.title}</Text>
+              <Text textAlign="center">{t(tab.title)}</Text>
             </Box>
           </TouchableOpacity>
         ))}

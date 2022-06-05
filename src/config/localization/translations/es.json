@@ -21,5 +21,14 @@
     "confirm_password": "Confirma tu contraseña",
     "dont_have_account": "¿No tienes una cuenta? crea tu cuenta",
     "have_account": "¿Ya tienes una cuenta?, Inicia sesión"
+  },
+  "home": {
+    "title": "Pide online y\nrecoge en tienda",
+    "tabs": {
+      "wearables": "Wearables",
+      "laptops": "Portátiles",
+      "phones": "Smartphones",
+      "drones": "Drones"
+    }
   }
 }
