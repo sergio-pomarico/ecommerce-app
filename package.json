@@ -80,7 +80,7 @@
       "@testing-library/jest-native/extend-expect"
     ],
     "transformIgnorePatterns": [
-      "node_modules/(?!(jest-)?@?react-native|@react-native-community|@react-navigation)"
+      "node_modules/(?!(jest-)?@?react-native|@react-native-community|@react-navigation|react-navigation)"
     ],
     "moduleNameMapper": {
       "react-i18next": "<rootDir>/__mocks__/react-i18next.ts"
