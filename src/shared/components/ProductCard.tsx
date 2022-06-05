@@ -1,7 +1,9 @@
 import React, {FC} from 'react';
 import {Image, StyleSheet, TouchableOpacity} from 'react-native';
 import {SharedElement} from 'react-navigation-shared-element';
-import {Box, Text} from '@components';
+
+import Box from './Box';
+import Text from './Text';
 
 interface ProductCardProps {
   onPress: () => void;

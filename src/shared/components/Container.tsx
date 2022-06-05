@@ -2,7 +2,7 @@ import React, {FC, ReactNode, useState} from 'react';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {Dimensions, ScrollView, StyleSheet} from 'react-native';
 
-import {Box} from '@components';
+import Box from './Box';
 
 const {height: screenHeight} = Dimensions.get('window');
 

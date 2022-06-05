@@ -7,8 +7,7 @@ import {
   withTiming,
 } from 'react-native-reanimated';
 
-import {Box} from '@components';
-
+import Box from '../Box';
 import Bubble from './Bubble';
 
 const {width: wWidth} = Dimensions.get('window');

@@ -1,7 +1,6 @@
 import React, {useState, useEffect, ReactNode, Children} from 'react';
 import {TouchableOpacity, Dimensions} from 'react-native';
 
-import {Box, Text} from '@components';
 import Animated, {
   useAnimatedStyle,
   useDerivedValue,
@@ -10,6 +9,9 @@ import Animated, {
 } from 'react-native-reanimated';
 import {makeStyle, Theme} from '@config/theme';
 import {useTranslation} from 'react-i18next';
+
+import Box from './Box';
+import Text from './Text';
 
 interface Tab {
   title: string;

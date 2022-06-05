@@ -6,10 +6,11 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-import {Box, Text} from '@components';
 import {Icon} from '@config/icons';
 import {useTheme} from '@config/theme';
 
+import Box from './Box';
+import Text from './Text';
 interface InputProps extends TextInputProps {
   placeholder: string;
   onChanceText: (text: string) => void;

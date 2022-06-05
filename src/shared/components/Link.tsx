@@ -1,8 +1,9 @@
 import React from 'react';
 
-import {Text} from '@components';
 import {TouchableOpacity} from 'react-native';
 import {Theme} from '@config/theme';
+
+import Text from './Text';
 
 interface LinkProps {
   label: string;
