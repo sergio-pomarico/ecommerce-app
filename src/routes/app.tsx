@@ -3,19 +3,44 @@ import {
   BottomTabBarProps,
   createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
+import {createSharedElementStackNavigator} from 'react-navigation-shared-element';
 
-import {AppRoutes} from '@core/types/navigation';
+import {AppRoutes, HomeRoutes} from '@core/types/navigation';
 import HomeScreen from '@screens/home';
+import ProductDetailScreen from '@screens/detail';
 import {BottomNavbar} from '@components';
 
 const AppStack = createBottomTabNavigator<AppRoutes>();
+const HomeStack = createSharedElementStackNavigator<HomeRoutes>();
 
-const AuthStackNavigation = () => (
+const HomeStackNavigation = () => (
+  <HomeStack.Navigator>
+    <HomeStack.Screen
+      name="List"
+      component={HomeScreen}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <HomeStack.Screen
+      name="Detail"
+      component={ProductDetailScreen}
+      sharedElements={() => {
+        return ['apple_watch'];
+      }}
+      options={{
+        headerShown: false,
+      }}
+    />
+  </HomeStack.Navigator>
+);
+
+const AppStackNavigation = () => (
   <AppStack.Navigator
     tabBar={(props: BottomTabBarProps) => <BottomNavbar {...props} />}>
     <AppStack.Screen
       name="Home"
-      component={HomeScreen}
+      component={HomeStackNavigation}
       options={{
         headerShown: false,
       }}
@@ -23,4 +48,4 @@ const AuthStackNavigation = () => (
   </AppStack.Navigator>
 );
 
-export default AuthStackNavigation;
+export default AppStackNavigation;

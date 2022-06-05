@@ -1,10 +1,15 @@
 import React, {FC} from 'react';
 import {Image, StyleSheet, TouchableOpacity} from 'react-native';
+import {SharedElement} from 'react-navigation-shared-element';
 import {Box, Text} from '@components';
 
-const ProductCard: FC = () => {
+interface ProductCardProps {
+  onPress: () => void;
+}
+
+const ProductCard: FC<ProductCardProps> = ({onPress}) => {
   return (
-    <TouchableOpacity onPress={() => {}}>
+    <TouchableOpacity onPress={onPress}>
       <Box
         borderRadius="l"
         backgroundColor="white"
@@ -16,10 +21,12 @@ const ProductCard: FC = () => {
         flex={1}
         alignItems="center">
         <Box flex={0.3}>
-          <Image
-            source={require('../../assets/apple_watch.jpg')}
-            style={styles.image}
-          />
+          <SharedElement id="apple_watch">
+            <Image
+              source={require('../../assets/apple_watch.jpg')}
+              style={styles.image}
+            />
+          </SharedElement>
         </Box>
         <Box flex={0.7} justifyContent="flex-start" alignItems="flex-start">
           <Text variant="product_card_title" marginBottom="s">
@@ -37,7 +44,7 @@ const ProductCard: FC = () => {
 const styles = StyleSheet.create({
   image: {
     width: 80,
-    height: 88,
+    height: 80,
     borderRadius: 5,
     resizeMode: 'cover',
   },

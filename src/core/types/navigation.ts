@@ -18,3 +18,8 @@ export type AuthRoutes = {
 export type AppRoutes = {
   Home: undefined;
 };
+
+export type HomeRoutes = {
+  List: undefined;
+  Detail: {product: string | undefined};
+};

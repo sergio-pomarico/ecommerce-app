@@ -1,5 +1,5 @@
 import React from 'react';
-import {AppRoutes, StackNavigationProps} from '@core/types/navigation';
+import {HomeRoutes, StackNavigationProps} from '@core/types/navigation';
 import {useTranslation} from 'react-i18next';
 
 import {Box, Container, ProductCard, Tabs, Text} from '@components';
@@ -7,7 +7,7 @@ import {useTheme} from '@shopify/restyle';
 
 import {tabs} from './constanst';
 
-const HomeScreen = ({}: StackNavigationProps<AppRoutes, 'Home'>) => {
+const HomeScreen = ({navigation}: StackNavigationProps<HomeRoutes, 'List'>) => {
   const theme = useTheme();
   const {t} = useTranslation();
   return (
@@ -18,10 +18,38 @@ const HomeScreen = ({}: StackNavigationProps<AppRoutes, 'Home'>) => {
         </Text>
       </Box>
       <Tabs {...{tabs}}>
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        <>
+          <ProductCard
+            onPress={() =>
+              navigation.navigate('Detail', {product: 'apple-watch'})
+            }
+          />
+          <ProductCard
+            onPress={() =>
+              navigation.navigate('Detail', {product: 'apple-watch'})
+            }
+          />
+          <ProductCard
+            onPress={() =>
+              navigation.navigate('Detail', {product: 'apple-watch'})
+            }
+          />
+        </>
+        <ProductCard
+          onPress={() =>
+            navigation.navigate('Detail', {product: 'apple-watch'})
+          }
+        />
+        <ProductCard
+          onPress={() =>
+            navigation.navigate('Detail', {product: 'apple-watch'})
+          }
+        />
+        <ProductCard
+          onPress={() =>
+            navigation.navigate('Detail', {product: 'apple-watch'})
+          }
+        />
       </Tabs>
     </Container>
   );
