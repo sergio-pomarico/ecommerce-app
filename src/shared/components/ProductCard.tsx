@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import {Image, StyleSheet, TouchableOpacity} from 'react-native';
 import {Box, Text} from '@components';
 
-const Product: FC = () => {
+const ProductCard: FC = () => {
   return (
     <TouchableOpacity onPress={() => {}}>
       <Box
@@ -10,7 +10,10 @@ const Product: FC = () => {
         backgroundColor="white"
         padding="s"
         flexDirection="row"
+        marginHorizontal="s"
         marginBottom="s"
+        height={120}
+        flex={1}
         alignItems="center">
         <Box flex={0.3}>
           <Image
@@ -18,22 +21,11 @@ const Product: FC = () => {
             style={styles.image}
           />
         </Box>
-        <Box flex={0.7} justifyContent="center" alignItems="flex-start">
-          <Text
-            fontWeight="600"
-            fontFamily="Raleway-Regular"
-            fontSize={16}
-            lineHeight={18}
-            marginBottom="xs">
+        <Box flex={0.7} justifyContent="flex-start" alignItems="flex-start">
+          <Text variant="product_card_title" marginBottom="s">
             Apple Watch - Serie 6
           </Text>
-          <Text
-            fontWeight="600"
-            fontFamily="Raleway-Regular"
-            fontSize={15}
-            lineHeight={18}
-            color="primary"
-            marginBottom="xs">
+          <Text variant="price" color="primary" marginBottom="s">
             $ 359 USD
           </Text>
         </Box>
@@ -45,10 +37,10 @@ const Product: FC = () => {
 const styles = StyleSheet.create({
   image: {
     width: 80,
-    height: 80,
-    borderRadius: 40,
-    resizeMode: 'contain',
+    height: 88,
+    borderRadius: 5,
+    resizeMode: 'cover',
   },
 });
 
-export default Product;
+export default ProductCard;

@@ -8,7 +8,9 @@ import {useTheme} from '@config/theme';
 
 const icons = {
   Home: 'home',
-  Cart: 'cart',
+  Cart: 'buy',
+  Favorites: 'heart',
+  Profile: 'profile',
 };
 
 type iconsKey = keyof typeof icons;
@@ -31,7 +33,7 @@ const BottomNavbar: FC<BottomTabBarProps> = ({state, navigation}) => {
         return (
           <TouchableOpacity
             onPress={!isFocused ? () => navigate(route) : undefined}
-            key={`${route}__${i}`}>
+            key={`${route.toLowerCase()}__${i}`}>
             <Box
               width={theme.spacing.l}
               height={theme.spacing.l}

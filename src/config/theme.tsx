@@ -85,6 +85,18 @@ const theme = createTheme({
       lineHeight: 24,
       textAlign: 'center',
     },
+    product_card_title: {
+      fontFamily: 'Raleway-Regular',
+      fontSize: 16,
+      fontWeight: '600',
+      lineHeight: 18,
+    },
+    price: {
+      fontFamily: 'Raleway-Regular',
+      fontSize: 15,
+      fontWeight: '600',
+      lineHeight: 17,
+    },
     button_large: {
       fontFamily: 'Raleway-Bold',
       fontSize: 20,

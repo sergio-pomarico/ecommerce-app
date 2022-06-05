@@ -8,3 +8,5 @@ export {default as Loading} from './Loading';
 export {default as Shimmer} from './Shimmer';
 export {default as Spinner} from './Spinner';
 export {default as Text} from './Text';
+export {default as Tabs} from './Tabs';
+export {default as ProductCard} from './ProductCard';
