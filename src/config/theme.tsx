@@ -60,6 +60,7 @@ const theme = createTheme({
   },
   breakpoints: {},
   textVariants: {
+    default: {},
     hero: {
       color: 'white',
       fontSize: 50,
@@ -84,6 +85,12 @@ const theme = createTheme({
       fontSize: 24,
       lineHeight: 24,
       textAlign: 'center',
+    },
+    paragraph: {
+      color: 'darkGrey',
+      fontSize: 16,
+      lineHeight: 20,
+      fontFamily: 'Raleway-Regular',
     },
     product_card_title: {
       fontFamily: 'Raleway-Regular',
