@@ -9,7 +9,7 @@ import Animated, {
   useDerivedValue,
 } from 'react-native-reanimated';
 
-import Box from '../Box';
+import {Box} from '@atoms';
 
 interface BaseShimmerProps {
   children?: ReactNode;

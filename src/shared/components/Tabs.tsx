@@ -10,8 +10,7 @@ import Animated, {
 import {makeStyle, Theme} from '@config/theme';
 import {useTranslation} from 'react-i18next';
 
-import Box from './Box';
-import Text from './Text';
+import {Box, Text} from '@atoms';
 
 interface Tab {
   title: string;

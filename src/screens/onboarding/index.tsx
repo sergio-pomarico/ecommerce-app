@@ -1,10 +1,5 @@
 import React, {useCallback} from 'react';
-import {
-  Dimensions,
-  NativeScrollEvent,
-  ScrollView,
-  StyleSheet,
-} from 'react-native';
+import {Dimensions, NativeScrollEvent, ScrollView} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import Animated, {
@@ -23,6 +18,7 @@ import {useTheme} from '@config/theme';
 import {slides} from './constanst';
 import Slide from './slide';
 import Dot from './dot';
+import {AnimatedScrollView} from '@atoms';
 
 const {width} = Dimensions.get('window');
 
@@ -77,14 +73,14 @@ const OnboardingScreen = ({
 
   return (
     <Animated.View style={bgStyle}>
-      <Animated.ScrollView
+      <AnimatedScrollView
         horizontal
         onScroll={scrollHandler}
         pagingEnabled
         ref={scrollRef as any}
         scrollEventThrottle={16}
         showsHorizontalScrollIndicator={false}
-        style={styles.container}>
+        flex={0.65}>
         {slides.map((slide, index) => (
           <Slide
             title={slide.title}
@@ -94,7 +90,7 @@ const OnboardingScreen = ({
             key={slide.title.replace('', '_').toLowerCase()}
           />
         ))}
-      </Animated.ScrollView>
+      </AnimatedScrollView>
       <Box justifyContent="space-around" alignItems="center" flex={0.35}>
         <Box flexDirection="row">
           {slides.map(({title}, index) => (
@@ -113,11 +109,5 @@ const OnboardingScreen = ({
     </Animated.View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 0.65,
-  },
-});
 
 export default OnboardingScreen;

@@ -22,7 +22,7 @@ const ProductDetailScreen = ({}: StackNavigationProps<
       />
       <SharedElement id="apple_watch">
         <Image
-          source={require('../../assets/apple_watch.jpg')}
+          source={require('@assets/img/apple_watch.jpg')}
           style={styles.image}
         />
       </SharedElement>

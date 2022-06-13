@@ -2,10 +2,8 @@ import React, {FC} from 'react';
 import {StyleSheet, TouchableOpacity} from 'react-native';
 import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {Icon} from '@config/icons';
+import {Box, Icon} from '@atoms';
 import {useTheme} from '@config/theme';
-
-import Box from './Box';
 
 const icons = {
   Home: 'home',

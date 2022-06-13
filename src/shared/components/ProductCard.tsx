@@ -2,8 +2,7 @@ import React, {FC} from 'react';
 import {Image, StyleSheet, TouchableOpacity} from 'react-native';
 import {SharedElement} from 'react-navigation-shared-element';
 
-import Box from './Box';
-import Text from './Text';
+import {Box, Text} from '@atoms';
 
 interface ProductCardProps {
   onPress: () => void;
@@ -25,7 +24,7 @@ const ProductCard: FC<ProductCardProps> = ({onPress}) => {
         <Box flex={0.3}>
           <SharedElement id="apple_watch">
             <Image
-              source={require('../../assets/apple_watch.jpg')}
+              source={require('@assets/img/apple_watch.jpg')}
               style={styles.image}
             />
           </SharedElement>
