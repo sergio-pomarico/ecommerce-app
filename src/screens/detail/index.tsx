@@ -3,8 +3,9 @@ import {Image, Dimensions, StyleSheet} from 'react-native';
 import {HomeRoutes, StackNavigationProps} from '@core/types/navigation';
 import {SharedElement} from 'react-navigation-shared-element';
 
-import {Box, Button, Container, Text} from '@components';
+import {Button, Container, Text} from '@components';
 import {useTheme} from '@shopify/restyle';
+import {Box} from '@atoms';
 
 const {height} = Dimensions.get('screen');
 

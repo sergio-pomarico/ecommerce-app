@@ -4,11 +4,12 @@ import {StyleSheet} from 'react-native';
 import {useDispatch} from 'react-redux';
 
 import {AuthRoutes, StackNavigationProps} from '@core/types/navigation';
-import {Box, Container, Loading, Text} from '@components';
+import {Container, Loading, Text} from '@components';
 import {useTheme} from '@config/theme';
 import SignUpForm from '@forms/signup';
 import {showLoading} from '@store/ui/actions';
 import {useTranslation} from 'react-i18next';
+import {Box} from '@atoms';
 
 const SignUpScreen = ({
   navigation,

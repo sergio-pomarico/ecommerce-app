@@ -4,7 +4,8 @@ import {useTranslation} from 'react-i18next';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
 
-import {Box, Button, Input, Link} from '@components';
+import {Button, Input, Link} from '@components';
+import {Box} from '@atoms';
 
 interface LoginFormProps {
   onSubmit: (form: {email: string; password: string}) => void;

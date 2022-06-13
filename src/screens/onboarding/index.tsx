@@ -12,13 +12,13 @@ import {
 } from 'react-native-reanimated';
 
 import {AuthRoutes, StackNavigationProps} from '@core/types/navigation';
-import {Box, Button} from '@components';
+import {Button} from '@components';
 import {useTheme} from '@config/theme';
 
 import {slides} from './constanst';
 import Slide from './slide';
 import Dot from './dot';
-import {AnimatedBox, AnimatedScrollView} from '@atoms';
+import {AnimatedBox, AnimatedScrollView, Box} from '@atoms';
 
 const {width} = Dimensions.get('window');
 
