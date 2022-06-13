@@ -2,7 +2,7 @@ import React, {useCallback} from 'react';
 import {Dimensions, NativeScrollEvent, ScrollView} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import Animated, {
+import {
   interpolateColor,
   useAnimatedRef,
   useAnimatedScrollHandler,
@@ -18,7 +18,7 @@ import {useTheme} from '@config/theme';
 import {slides} from './constanst';
 import Slide from './slide';
 import Dot from './dot';
-import {AnimatedScrollView} from '@atoms';
+import {AnimatedBox, AnimatedScrollView} from '@atoms';
 
 const {width} = Dimensions.get('window');
 
@@ -72,7 +72,7 @@ const OnboardingScreen = ({
   });
 
   return (
-    <Animated.View style={bgStyle}>
+    <AnimatedBox style={bgStyle}>
       <AnimatedScrollView
         horizontal
         onScroll={scrollHandler}
@@ -106,7 +106,7 @@ const OnboardingScreen = ({
           onPress={onPressNext}
         />
       </Box>
-    </Animated.View>
+    </AnimatedBox>
   );
 };
 

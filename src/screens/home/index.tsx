@@ -2,10 +2,11 @@ import React from 'react';
 import {HomeRoutes, StackNavigationProps} from '@core/types/navigation';
 import {useTranslation} from 'react-i18next';
 
-import {Box, Container, ProductCard, Tabs, Text} from '@components';
+import {Container, ProductCard, Tabs, Text} from '@components';
 import {useTheme} from '@shopify/restyle';
 
 import {tabs} from './constanst';
+import {Box} from '@atoms';
 
 const HomeScreen = ({navigation}: StackNavigationProps<HomeRoutes, 'List'>) => {
   const theme = useTheme();
