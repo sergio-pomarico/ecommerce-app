@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {ScrollViewProps} from 'react-native';
 import Animated, {AnimateProps} from 'react-native-reanimated';
 import {createBox} from '@shopify/restyle';

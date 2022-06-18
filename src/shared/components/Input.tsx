@@ -6,8 +6,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-import {Icon} from '@atoms';
-import {Box, Text} from '@atoms';
+import {Box, Icon, Text} from '@atoms';
 import {useTheme} from '@config/theme';
 
 interface InputProps extends TextInputProps {

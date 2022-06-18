@@ -21,11 +21,11 @@ const Container: FC<ContainerProps> = ({children, background}) => {
     paddingBotton: insets.bottom,
   };
 
-  const onContentSizeChange = (_contentWidth: number, contentHeight: number) =>
+  const onContentSizeChange = (_: number, contentHeight: number) =>
     setHeight(contentHeight);
 
   return (
-    <Box style={[styles.container, bg]}>
+    <Box flex={1} style={bg}>
       <ScrollView
         style={styles.scrollview}
         contentContainerStyle={styles.content}
@@ -38,9 +38,6 @@ const Container: FC<ContainerProps> = ({children, background}) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   scrollview: {
     flex: 1,
   },
