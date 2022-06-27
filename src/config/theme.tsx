@@ -60,7 +60,12 @@ const theme = createTheme({
   },
   breakpoints: {},
   textVariants: {
-    default: {},
+    defaults: {
+      color: 'darkGrey',
+      fontSize: 16,
+      lineHeight: 18,
+      fontFamily: 'Raleway-Regular',
+    },
     hero: {
       color: 'white',
       fontSize: 50,
