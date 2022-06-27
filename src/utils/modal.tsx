@@ -1,5 +1,5 @@
 import {useDispatch, useSelector} from 'react-redux';
-import {hideModal, showModal} from '@store/ui/actions';
+import {hideModal, showModal} from '@store/ui';
 import {RootState} from '@core/types/redux';
 import {ModalProps} from '@core/types/modal';
 

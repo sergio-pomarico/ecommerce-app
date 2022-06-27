@@ -1,6 +1,6 @@
-import {Action} from '@core/types/redux';
+import {createSlice} from '@reduxjs/toolkit';
+import type {PayloadAction} from '@reduxjs/toolkit';
 import {ModalProps, ModalTypes} from '@core/types/modal';
-import {UIActionsType} from './actions.types';
 
 const defaultModal: ModalProps = {
   show: false,
@@ -14,23 +14,21 @@ const initialState = {
   modal: defaultModal,
 };
 
-export default function UIReducer(
-  state = initialState,
-  action: Action<string, any>,
-) {
-  switch (action.type) {
-    case UIActionsType.SHOW_LOADING: {
-      const {payload} = action;
-      return {...state, loading: payload};
-    }
-    case UIActionsType.SHOW_MODAl: {
-      const {modal} = action.payload;
-      return {...state, modal};
-    }
-    case UIActionsType.HIDE_MODAl: {
-      return {...state, modal: defaultModal};
-    }
-    default:
-      return state;
-  }
-}
+const uiSlice = createSlice({
+  name: 'auth',
+  initialState,
+  reducers: {
+    showLoading: (state, action: PayloadAction<boolean>) => {
+      state.loading = action.payload;
+    },
+    showModal: (state, action: PayloadAction<ModalProps>) => {
+      state.modal = action.payload;
+    },
+    hideModal: state => {
+      state.modal = defaultModal;
+    },
+  },
+});
+
+export const Actions = uiSlice.actions;
+export default uiSlice.reducer;

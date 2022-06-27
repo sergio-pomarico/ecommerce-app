@@ -7,7 +7,7 @@ import {AuthRoutes, StackNavigationProps} from '@core/types/navigation';
 import {Container, Loading, Text} from '@components';
 import {useTheme} from '@config/theme';
 import LoginForm from '@forms/login';
-import {loginAttempt} from '@store/auth/actions';
+import {loginAttempt} from '@store/auth';
 import {useTranslation} from 'react-i18next';
 import {Box} from '@atoms';
 

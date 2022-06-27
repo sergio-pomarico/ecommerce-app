@@ -1,4 +1,5 @@
-import authReducer from './reducer';
+import authReducer, {Actions} from './reducer';
 import authSaga from './saga';
+const {loginAttempt} = Actions;
 
-export {authReducer, authSaga};
+export {authReducer, authSaga, loginAttempt};

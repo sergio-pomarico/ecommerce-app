@@ -1,3 +1,4 @@
-import UIReducer from './reducer';
+import UIReducer, {Actions} from './reducer';
+const {showLoading, showModal, hideModal} = Actions;
 
-export {UIReducer};
+export {UIReducer, showLoading, showModal, hideModal};
