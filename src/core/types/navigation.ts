@@ -1,3 +1,4 @@
+import {Product} from '@core/models/product';
 import {ParamListBase, RouteProp} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
@@ -21,5 +22,5 @@ export type AppRoutes = {
 
 export type HomeRoutes = {
   List: undefined;
-  Detail: {product: string | undefined};
+  Detail: {product: Product};
 };

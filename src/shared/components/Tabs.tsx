@@ -69,7 +69,14 @@ const Tabs = ({tabs, children}: TabsProps) => {
             onPress={() => setSelectedIndex(index)}
             key={tab.id}>
             <Box paddingVertical="xs">
-              <Text textAlign="center">{t(tab.title)}</Text>
+              <Text
+                textAlign="center"
+                variant="tabs"
+                color={
+                  tabs[selectedIndex].id === tab.id ? 'primary' : 'darkGrey'
+                }>
+                {t(tab.title)}
+              </Text>
             </Box>
           </TouchableOpacity>
         ))}

@@ -37,6 +37,7 @@ const palette = {
 const theme = createTheme({
   colors: {
     background: palette.lightGrey,
+    black: palette.black,
     primary: palette.indigo,
     text: palette.black,
     white: palette.white,
@@ -96,6 +97,12 @@ const theme = createTheme({
       fontSize: 16,
       lineHeight: 20,
       fontFamily: 'Raleway-Regular',
+    },
+    tabs: {
+      color: 'darkGrey',
+      fontSize: 14,
+      lineHeight: 16,
+      fontFamily: 'Raleway-Semibold',
     },
     product_card_title: {
       fontFamily: 'Raleway-Regular',

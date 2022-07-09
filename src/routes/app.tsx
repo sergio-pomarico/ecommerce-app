@@ -14,7 +14,7 @@ const AppStack = createBottomTabNavigator<AppRoutes>();
 const HomeStack = createSharedElementStackNavigator<HomeRoutes>();
 
 const HomeStackNavigation = () => (
-  <HomeStack.Navigator>
+  <HomeStack.Navigator initialRouteName="List">
     <HomeStack.Screen
       name="List"
       component={HomeScreen}
@@ -25,8 +25,8 @@ const HomeStackNavigation = () => (
     <HomeStack.Screen
       name="Detail"
       component={ProductDetailScreen}
-      sharedElements={() => {
-        return ['apple_watch'];
+      sharedElements={route => {
+        return [route.params.product.id];
       }}
       options={{
         headerShown: false,

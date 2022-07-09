@@ -9,11 +9,12 @@ import {Box} from '@atoms';
 
 const {height} = Dimensions.get('screen');
 
-const ProductDetailScreen = ({}: StackNavigationProps<
-  HomeRoutes,
-  'Detail'
->) => {
+const ProductDetailScreen = ({
+  route,
+}: StackNavigationProps<HomeRoutes, 'Detail'>) => {
   const theme = useTheme();
+  const {product} = route.params;
+  const {id} = product;
   return (
     <Container background={theme.colors.white}>
       <Box
@@ -21,7 +22,7 @@ const ProductDetailScreen = ({}: StackNavigationProps<
         height={height * 0.5}
         backgroundColor="white"
       />
-      <SharedElement id="apple_watch">
+      <SharedElement id={id}>
         <Image
           source={require('@assets/img/apple_watch.jpg')}
           style={styles.image}

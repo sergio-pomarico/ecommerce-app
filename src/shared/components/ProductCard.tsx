@@ -3,14 +3,18 @@ import {Image, StyleSheet, TouchableOpacity} from 'react-native';
 import {SharedElement} from 'react-navigation-shared-element';
 
 import {Box, Text} from '@atoms';
+import {Product} from '@core/models/product';
 
 interface ProductCardProps {
-  onPress: () => void;
+  onPress: (product: Product) => void;
+  product: Product;
 }
 
-const ProductCard: FC<ProductCardProps> = ({onPress}) => {
+const ProductCard: FC<ProductCardProps> = props => {
+  const {product, onPress} = props;
+  const {id, image, name, price} = product;
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity onPress={() => onPress(product)}>
       <Box
         borderRadius="l"
         backgroundColor="white"
@@ -22,19 +26,16 @@ const ProductCard: FC<ProductCardProps> = ({onPress}) => {
         flex={1}
         alignItems="center">
         <Box flex={0.3}>
-          <SharedElement id="apple_watch">
-            <Image
-              source={require('@assets/img/apple_watch.jpg')}
-              style={styles.image}
-            />
+          <SharedElement id={id}>
+            <Image source={image} style={styles.image} />
           </SharedElement>
         </Box>
         <Box flex={0.7} justifyContent="flex-start" alignItems="flex-start">
           <Text variant="product_card_title" marginBottom="s">
-            Apple Watch - Serie 6
+            {name}
           </Text>
           <Text variant="price" color="primary" marginBottom="s">
-            $ 359 USD
+            $ {price} USD
           </Text>
         </Box>
       </Box>
