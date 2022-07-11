@@ -1,17 +1,24 @@
 import React from 'react';
+import {createSharedElementStackNavigator} from 'react-navigation-shared-element';
 import {
   BottomTabBarProps,
   createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
-import {createSharedElementStackNavigator} from 'react-navigation-shared-element';
 
 import {AppRoutes, HomeRoutes} from '@core/types/navigation';
 import HomeScreen from '@screens/home';
 import ProductDetailScreen from '@screens/detail';
 import {BottomNavbar} from '@components';
+import {StackCardStyleInterpolator} from '@react-navigation/stack';
 
 const AppStack = createBottomTabNavigator<AppRoutes>();
 const HomeStack = createSharedElementStackNavigator<HomeRoutes>();
+
+const forFade: StackCardStyleInterpolator = ({current}) => ({
+  cardStyle: {
+    opacity: current.progress,
+  },
+});
 
 const HomeStackNavigation = () => (
   <HomeStack.Navigator initialRouteName="List">
@@ -30,6 +37,8 @@ const HomeStackNavigation = () => (
       }}
       options={{
         headerShown: false,
+        presentation: 'transparentModal',
+        cardStyleInterpolator: forFade,
       }}
     />
   </HomeStack.Navigator>

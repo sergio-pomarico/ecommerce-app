@@ -1,5 +1,6 @@
-import React, {FC} from 'react';
+import React, {FC, useState} from 'react';
 import {Image, StyleSheet, TouchableOpacity} from 'react-native';
+import {useFocusEffect, useNavigation} from '@react-navigation/native';
 import {SharedElement} from 'react-navigation-shared-element';
 
 import {Box, Text} from '@atoms';
@@ -13,8 +14,19 @@ interface ProductCardProps {
 const ProductCard: FC<ProductCardProps> = props => {
   const {product, onPress} = props;
   const {id, image, name, price} = product;
+  const [opacity, setOpacity] = useState(0);
+  const navigation = useNavigation();
+  useFocusEffect(() => {
+    if (navigation.isFocused()) {
+      setOpacity(1);
+    }
+  });
   return (
-    <TouchableOpacity onPress={() => onPress(product)}>
+    <TouchableOpacity
+      onPress={() => {
+        onPress(product);
+        setOpacity(0);
+      }}>
       <Box
         borderRadius="l"
         backgroundColor="white"
@@ -24,6 +36,7 @@ const ProductCard: FC<ProductCardProps> = props => {
         marginBottom="s"
         height={120}
         flex={1}
+        opacity={opacity}
         alignItems="center">
         <Box flex={0.3}>
           <SharedElement id={id}>
