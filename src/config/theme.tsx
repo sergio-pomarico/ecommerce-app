@@ -37,6 +37,7 @@ const palette = {
 const theme = createTheme({
   colors: {
     background: palette.lightGrey,
+    black: palette.black,
     primary: palette.indigo,
     text: palette.black,
     white: palette.white,
@@ -54,12 +55,18 @@ const theme = createTheme({
   },
   borderRadii: {
     s: 4,
-    m: 10,
-    l: 25,
+    m: 8,
+    l: 24,
     xl: 64,
   },
   breakpoints: {},
   textVariants: {
+    defaults: {
+      color: 'darkGrey',
+      fontSize: 16,
+      lineHeight: 18,
+      fontFamily: 'Raleway-Regular',
+    },
     hero: {
       color: 'white',
       fontSize: 50,
@@ -84,6 +91,18 @@ const theme = createTheme({
       fontSize: 24,
       lineHeight: 24,
       textAlign: 'center',
+    },
+    paragraph: {
+      color: 'darkGrey',
+      fontSize: 16,
+      lineHeight: 20,
+      fontFamily: 'Raleway-Regular',
+    },
+    tabs: {
+      color: 'darkGrey',
+      fontSize: 14,
+      lineHeight: 16,
+      fontFamily: 'Raleway-Semibold',
     },
     product_card_title: {
       fontFamily: 'Raleway-Regular',

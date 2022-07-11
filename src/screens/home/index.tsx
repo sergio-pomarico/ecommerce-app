@@ -1,57 +1,34 @@
 import React from 'react';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {HomeRoutes, StackNavigationProps} from '@core/types/navigation';
 import {useTranslation} from 'react-i18next';
 
-import {Box, Container, ProductCard, Tabs, Text} from '@components';
-import {useTheme} from '@shopify/restyle';
+import {Tabs, Text} from '@components';
 
-import {tabs} from './constanst';
+import {products, tabs} from './constanst';
+import {Box} from '@atoms';
+import ProductList from 'src/shared/components/ProductList';
+import {Product} from '@core/models/product';
 
 const HomeScreen = ({navigation}: StackNavigationProps<HomeRoutes, 'List'>) => {
-  const theme = useTheme();
   const {t} = useTranslation();
+  const insets = useSafeAreaInsets();
+  const goToDetail = (product: Product) =>
+    navigation.navigate('Detail', {product});
   return (
-    <Container background={theme.colors.background}>
+    <Box backgroundColor="background" flex={1} style={{paddingTop: insets.top}}>
       <Box marginHorizontal="s">
-        <Text variant="h1" textAlign="left">
+        <Text variant="h1" textAlign="left" color="black" marginBottom="l">
           {t('home.title')}
         </Text>
       </Box>
       <Tabs {...{tabs}}>
-        <>
-          <ProductCard
-            onPress={() =>
-              navigation.navigate('Detail', {product: 'apple-watch'})
-            }
-          />
-          <ProductCard
-            onPress={() =>
-              navigation.navigate('Detail', {product: 'apple-watch'})
-            }
-          />
-          <ProductCard
-            onPress={() =>
-              navigation.navigate('Detail', {product: 'apple-watch'})
-            }
-          />
-        </>
-        <ProductCard
-          onPress={() =>
-            navigation.navigate('Detail', {product: 'apple-watch'})
-          }
-        />
-        <ProductCard
-          onPress={() =>
-            navigation.navigate('Detail', {product: 'apple-watch'})
-          }
-        />
-        <ProductCard
-          onPress={() =>
-            navigation.navigate('Detail', {product: 'apple-watch'})
-          }
-        />
+        <ProductList data={products} onPressProduct={goToDetail} />
+        <ProductList data={products} onPressProduct={goToDetail} />
+        <ProductList data={products} onPressProduct={goToDetail} />
+        <ProductList data={products} onPressProduct={goToDetail} />
       </Tabs>
-    </Container>
+    </Box>
   );
 };
 

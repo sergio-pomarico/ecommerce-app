@@ -4,7 +4,7 @@ import {useSelector} from 'react-redux';
 
 import {RootState} from '@core/types/redux';
 
-import Box from './Box';
+import {Box} from '@atoms';
 import Spinner from './Spinner';
 
 const Loading = (WrappedComponent: ElementType) => {

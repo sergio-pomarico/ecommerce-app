@@ -8,8 +8,8 @@ import Animated, {
 } from 'react-native-reanimated';
 import {useTranslation} from 'react-i18next';
 
-import {Box, Text} from '@components';
 import {makeStyle, Theme} from '@config/theme';
+import {AnimatedBox, Box, Text} from '@atoms';
 
 interface SlideProps {
   title: string;
@@ -62,9 +62,9 @@ const Slide: FC<SlideProps> = ({title, image, index, currentIndex}) => {
   const styles = useStyles();
   return (
     <Box style={styles.slide}>
-      <Animated.View style={[textStyle, styles.text]}>
+      <AnimatedBox style={[textStyle, styles.text]}>
         <Text variant="hero">{t(title)}</Text>
-      </Animated.View>
+      </AnimatedBox>
       <Animated.Image source={image} style={[styles.image, imageStyle]} />
     </Box>
   );

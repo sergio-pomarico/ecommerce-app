@@ -1,12 +1,12 @@
 import React, {FC} from 'react';
-import {makeStyle, Theme} from '@config/theme';
 
-import Animated, {
+import {
   Extrapolate,
   interpolate,
   SharedValue,
   useAnimatedStyle,
 } from 'react-native-reanimated';
+import {AnimatedBox} from '@atoms';
 
 interface DotProps {
   index: number;
@@ -14,7 +14,6 @@ interface DotProps {
 }
 
 const Dot: FC<DotProps> = ({index, currentIndex}) => {
-  const styles = useStyles();
   const dotStyle = useAnimatedStyle(() => {
     const opacity = interpolate(
       currentIndex.value,
@@ -30,17 +29,16 @@ const Dot: FC<DotProps> = ({index, currentIndex}) => {
     );
     return {opacity, transform: [{scale}]};
   });
-  return <Animated.View style={[styles.dot, dotStyle]} />;
+  return (
+    <AnimatedBox
+      height={16}
+      borderRadius="m"
+      marginRight="s"
+      backgroundColor="white"
+      width={16}
+      style={dotStyle}
+    />
+  );
 };
-
-const useStyles = makeStyle((theme: Theme) => ({
-  dot: {
-    backgroundColor: theme.colors.white,
-    borderRadius: 6,
-    height: 12,
-    margin: 4,
-    width: 12,
-  },
-}));
 
 export default Dot;

@@ -1,7 +1,7 @@
 import React, {FC, ReactNode} from 'react';
 import {StyleSheet, ViewStyle} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import Animated, {
+import {
   interpolate,
   Extrapolate,
   SharedValue,
@@ -9,7 +9,7 @@ import Animated, {
   useDerivedValue,
 } from 'react-native-reanimated';
 
-import Box from '../Box';
+import {AnimatedBox, Box} from '@atoms';
 
 interface BaseShimmerProps {
   children?: ReactNode;
@@ -57,10 +57,10 @@ const BaseShimmer: FC<BaseShimmerProps> = ({
       <Box style={!visible && styles.hiden}>{children}</Box>
       {!visible && (
         <Box flex={1} style={{backgroundColor: colors[0]}}>
-          <Animated.View style={[styles.flex, rStyle]}>
+          <AnimatedBox flex={1} style={rStyle}>
             <LinearGradient
               colors={colors}
-              style={[styles.flex, {width: width}]}
+              style={[styles.flex, {width}]}
               start={{
                 x: -1,
                 y: 0.5,
@@ -71,7 +71,7 @@ const BaseShimmer: FC<BaseShimmerProps> = ({
               }}
               locations={location}
             />
-          </Animated.View>
+          </AnimatedBox>
         </Box>
       )}
     </Box>

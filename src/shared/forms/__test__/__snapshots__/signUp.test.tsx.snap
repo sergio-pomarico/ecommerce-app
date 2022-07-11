@@ -6,8 +6,8 @@ exports[`SignUp test suite check if the SignUp Form render correctly 1`] = `
     Array [
       Object {
         "backgroundColor": "#FFFFFF",
-        "borderTopLeftRadius": 25,
-        "borderTopRightRadius": 25,
+        "borderTopLeftRadius": 24,
+        "borderTopRightRadius": 24,
         "flex": 1,
         "padding": 32,
         "paddingVertical": 64,
@@ -451,6 +451,7 @@ exports[`SignUp test suite check if the SignUp Form render correctly 1`] = `
         style={
           Array [
             Object {
+              "color": "#868686",
               "fontFamily": "Raleway-Bold",
               "fontSize": 20,
               "lineHeight": 24,
@@ -499,7 +500,9 @@ exports[`SignUp test suite check if the SignUp Form render correctly 1`] = `
           Array [
             Object {
               "color": "#5956E9",
+              "fontFamily": "Raleway-Regular",
               "fontSize": 16,
+              "lineHeight": 18,
               "textAlign": "center",
             },
           ]

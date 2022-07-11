@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {TouchableOpacity, ViewStyle} from 'react-native';
 import {useTheme, makeStyle, Theme} from '@config/theme';
-import Text from './Text';
+import {Text} from '@atoms';
 
 interface ButtonProps {
   label?: string;

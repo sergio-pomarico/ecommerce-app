@@ -27,7 +27,7 @@ jobs:
           cache: 'npm'
           node-version: 16
       - name: Install dependencies
-        run: npm ci
+        run: install --no-audit --no-fund --no-optional
       - name: Run linter
         run: npm run lint
       - name: Run tests

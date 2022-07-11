@@ -1,7 +1,7 @@
 import React, {useState, useEffect, ReactNode, Children} from 'react';
 import {TouchableOpacity, Dimensions} from 'react-native';
 
-import Animated, {
+import {
   useAnimatedStyle,
   useDerivedValue,
   useSharedValue,
@@ -10,8 +10,7 @@ import Animated, {
 import {makeStyle, Theme} from '@config/theme';
 import {useTranslation} from 'react-i18next';
 
-import Box from './Box';
-import Text from './Text';
+import {AnimatedBox, Box, Text} from '@atoms';
 
 interface Tab {
   title: string;
@@ -70,20 +69,28 @@ const Tabs = ({tabs, children}: TabsProps) => {
             onPress={() => setSelectedIndex(index)}
             key={tab.id}>
             <Box paddingVertical="xs">
-              <Text textAlign="center">{t(tab.title)}</Text>
+              <Text
+                textAlign="center"
+                variant="tabs"
+                color={
+                  tabs[selectedIndex].id === tab.id ? 'primary' : 'darkGrey'
+                }>
+                {t(tab.title)}
+              </Text>
             </Box>
           </TouchableOpacity>
         ))}
-        <Animated.View style={[styles.line, line]} />
+        <AnimatedBox style={[styles.line, line]} />
       </Box>
-      <Animated.View
-        style={[styles.tab, content, {width: tabs.length * width}]}>
+      <AnimatedBox
+        flexDirection="row"
+        style={[content, {width: tabs.length * width}]}>
         {Children.map(children, (child, i) => (
           <Box flex={1} key={i} width={width}>
             {child}
           </Box>
         ))}
-      </Animated.View>
+      </AnimatedBox>
     </Box>
   );
 };

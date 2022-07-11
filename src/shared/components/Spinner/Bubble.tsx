@@ -6,6 +6,7 @@ import Animated, {
 } from 'react-native-reanimated';
 
 import {makeStyle, Theme} from '@config/theme';
+import {AnimatedBox} from '@atoms';
 
 interface BubbleProps {
   progress: Animated.SharedValue<number>;
@@ -30,7 +31,7 @@ const Bubble = ({progress, start, end}: BubbleProps) => {
     );
     return {opacity, transform: [{scale}]};
   });
-  return <Animated.View style={[styles.bubble, style]} />;
+  return <AnimatedBox style={[styles.bubble, style]} />;
 };
 
 const useStyles = makeStyle((theme: Theme) => ({

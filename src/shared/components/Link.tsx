@@ -3,7 +3,7 @@ import React from 'react';
 import {TouchableOpacity} from 'react-native';
 import {Theme} from '@config/theme';
 
-import Text from './Text';
+import {Text} from '@atoms';
 
 interface LinkProps {
   label: string;

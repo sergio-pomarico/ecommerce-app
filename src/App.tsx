@@ -4,7 +4,7 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {Provider} from 'react-redux';
 import Navigation from '@routes/main';
 import {ThemeProvider} from '@config/theme';
-import ModalWrapper from 'shared/components/ModalWrapper';
+import {ModalWrapper} from '@components';
 
 import store from '@store/reducers';
 

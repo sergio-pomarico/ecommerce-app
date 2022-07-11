@@ -7,16 +7,14 @@ import {
   withTiming,
 } from 'react-native-reanimated';
 
-import Box from '../Box';
+import {Box} from '@atoms';
 import Bubble from './Bubble';
 
 const {width: wWidth} = Dimensions.get('window');
 const width = wWidth * 0.45;
 const easing = Easing.inOut(Easing.ease);
 
-interface SpinnerProps {}
-
-const Spinner: FC<SpinnerProps> = ({}) => {
+const Spinner: FC = ({}) => {
   const progress = useSharedValue(0);
   useEffect(() => {
     progress.value = withRepeat(

@@ -1,11 +1,4 @@
-import {
-  createStore,
-  combineReducers,
-  applyMiddleware,
-  AnyAction,
-  Reducer,
-} from 'redux';
-import {composeWithDevTools} from 'redux-devtools-extension';
+import {configureStore} from '@reduxjs/toolkit';
 
 import createSagaMiddleware from 'redux-saga';
 import {all} from 'redux-saga/effects';
@@ -14,25 +7,22 @@ import {all} from 'redux-saga/effects';
 import {UIReducer} from './ui';
 import {authReducer, authSaga} from './auth';
 
-const reducers: Reducer<any, AnyAction> = combineReducers({
-  ui: UIReducer,
-  auth: authReducer,
-});
-
 // Saga
 function* rootSaga() {
   yield all([...authSaga]);
 }
 
-const sagaMiddleware = createSagaMiddleware();
-
 // Middlewares
+const sagaMiddleware = createSagaMiddleware();
 const middlewares = [sagaMiddleware];
 
-const store = createStore(
-  reducers,
-  composeWithDevTools(applyMiddleware(...middlewares)),
-);
+const store = configureStore({
+  reducer: {
+    ui: UIReducer,
+    auth: authReducer,
+  },
+  middleware: middlewares,
+});
 
 sagaMiddleware.run(rootSaga);
 
